@@ -2,6 +2,19 @@
 
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
+#Capstone Project Technical Requirements
+
+-A minimum of 5 pages.
+-Use dynamic and interactive user input.
+-Use a CSS design library such as TailwindCSS or styled-components.
+-Use of the React Framework or any other React based framework e.g. Gatsby, NextJS, Frontity, etc.
+-Users should be able to register or join a mailing list to receive more information. The user details should be saved in an online database.
+-Interact with an external API or backend platform (e.g. Firebase, Airtable, strapi, etc). The application should FETCH and POST from the API.
+-The website should  preferably support 2 languages.
+-Unit testing should be utilized within the project e.g. Jest.
+-The application should also have a linting tool integrated. E.g. ESLint.
+-The website should have automated deployment to a server using Netlify or another platform.
+
 ## Issues and Pull Requests
 We will use GitHub to manage the project. Any issue (or task) will be created during your team's Sprint Planning. Then once assigned to you, you will have to implement the feature and create a PR.
 
