@@ -13,7 +13,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react" , "daisyui" ,"flowbite/plugin"],
   "rules": {
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
     "react/function-component-definition": "off",
