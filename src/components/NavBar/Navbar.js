@@ -9,10 +9,10 @@ function Navbar() {
                     <a href="/home" className="flex items-center pl-7">
                         <img
                             src={Logo}
-                            className="md:h-14 md:w-14 h-6 mr-3 sm:h-9"
+                            className="md:h-10 md:w-10 h-6 mr-3 sm:h-9"
                             alt="Logo"
                         />
-                        <span className=" font-['Poppins'] font-normal leading-10 text-5xl whitespace-nowrap dark:text-white">
+                        <span className=" font-['Poppins'] font-medium	leading-10 text-3xl whitespace-nowrap dark:text-white">
                             Healing
                         </span>
                     </a>
@@ -24,7 +24,7 @@ function Navbar() {
                             <li>
                                 <a
                                     href="/home"
-                                    className="font-['Poppins'] font-bold text-xl mt-2 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-200 md:p-0 dark:text-white"
+                                    className="font-['Poppins'] font-bold text-base	 mt-2 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-200 md:p-0 dark:text-white"
                                     aria-current="page"
                                 >
                                     Home
@@ -33,7 +33,7 @@ function Navbar() {
                             <li>
                                 <a
                                     href="/blogs"
-                                    className=" font-['Poppins'] font-normal text-xl mt-2 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    className=" font-['Poppins'] font-medium text-base	 mt-2 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Blogs
                                 </a>
@@ -41,7 +41,7 @@ function Navbar() {
                             <li>
                                 <a
                                     href="/about"
-                                    className="font-['Poppins'] font-normal mt-2 text-xl block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    className="font-['Poppins'] font-medium mt-2 text-base	 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     About
                                 </a>
@@ -49,7 +49,7 @@ function Navbar() {
                             <li>
                                 <a
                                     href="/contact"
-                                    className="font-['Poppins'] font-normal text-xl mt-2 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    className="font-['Poppins'] font-medium text-base	 mt-2 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Contact Us
                                 </a>
@@ -58,7 +58,7 @@ function Navbar() {
 
                                 <button
                                     type="button"
-                                    className=" font-['Poppins']font-normal text-xl  text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                    className=" font-['Poppins'] font-medium text-base text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300  rounded-md px-6 py-1.5 mt-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                                 >
                                     Log In
                                 </button>
