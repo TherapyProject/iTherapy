@@ -8,7 +8,7 @@ function Footer() {
         <br />
         <br />
         <span className="text-xl pt-6">
-          We &apos ll never to spam you or share your email
+          We&apos;ll never to spam you or share your email
         </span>
         <div className="form-control w-80">
           <div className="relative pt-6">
