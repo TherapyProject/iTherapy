@@ -25,7 +25,6 @@ function Navbar() {
                                 <a href="/contactus" className="font-['Poppins'] font-normal text-xl mt-2 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact Us</a>
                             </li>
                             <button type="button" className=" font-['Poppins']font-normal text-xl  text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Log In</button>
-
                         </ul>
 
                     </div>
