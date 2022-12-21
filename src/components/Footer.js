@@ -7,7 +7,7 @@ function Footer() {
         <span className="text-3xl font-bold">Subscribe</span>
         <br />
         <br />
-        <span className="text-xl pt-6">We &apos ll never to spam you or share your email</span>
+        <span className="text-xl pt-6">We&apos;ll never to spam you or share your email</span>
         <div className="form-control w-80">
           <div className="relative pt-6">
             <input type="text" placeholder="Enter your e-mail" className="input input-bordered w-full pr-16" />
