@@ -15,7 +15,7 @@ function Purchase() {
     <h2 className="card-title text-3xl justify-center">5 TICKETS</h2>
     <span className="text-xl text-center">10$</span>
     <div className="card-actions justify-center">
-      <button className="btn btn-info">PURCHASE</button>
+      <button type="button" className="btn btn-info">PURCHASE</button>
     </div>
   </div>
 </div>
@@ -24,7 +24,7 @@ function Purchase() {
     <h2 className="card-title text-3xl justify-center">25 TICKETS</h2>
     <p className="text-xl text-center">40$</p>
     <div className="card-actions justify-center">
-      <button className="btn btn-info">PURCHASE</button>
+      <button type="button" className="btn btn-info">PURCHASE</button>
     </div>
   </div>
 </div> 
@@ -33,7 +33,7 @@ function Purchase() {
     <h2 className="card-title text-3xl justify-center">50 TICKETS</h2>
     <p className="text-xl text-center">70$</p>
     <div className="card-actions justify-center">
-      <button className="btn btn-info">PURCHASE</button>
+      <button type="button" className="btn btn-info">PURCHASE</button>
     </div>
   </div>
 </div>
@@ -44,7 +44,7 @@ function Purchase() {
     <h2 className="card-title text-3xl justify-center">ARE YOU A COUNSELOR?</h2>
     <p className="text-xl justify-center">Interested in joining our mental health platform? You decide your schedule and how much you want to work, we’ll take care of the client referrals and billing details!</p>
     <div className="card-actions justify-center">
-      <button className="btn btn-info">LEARN MORE</button>
+      <button type="button" className="btn btn-info">LEARN MORE</button>
     </div>
   </div>
 </div>
