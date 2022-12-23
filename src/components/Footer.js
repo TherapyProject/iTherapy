@@ -5,8 +5,8 @@ function Footer() {
         <footer className="p-10 bg-yellow-200">
   <div>
     <span className="text-3xl font-bold">Subscribe</span> 
-    <br></br>
-    <br></br>
+    <br/>
+    <br/>
     <span className="text-xl pt-6"> We'll never to spam you or share your email</span> 
     <div className="form-control w-80">
       <div className="relative pt-6"> 
