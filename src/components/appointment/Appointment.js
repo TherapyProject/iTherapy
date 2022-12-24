@@ -3,8 +3,8 @@ import AvatarGroup from './AvatarGroup';
 
 function Appointment() {
   return (
-    <div className=" pl-20 absolute w-full h-[450px] flex flex-col gap-3 justify-around items-start p-5 bg-[#FEE89E]">
-      <div className="w-[700px] p-5 flex flex-wrap ">
+    <div className=" pl-20 w-full flex flex-col gap-3 justify-around items-start p-5 bg-[#FEE89E]">
+      <div className="p-5 flex flex-wrap ">
         <h2 className="text-4xl text-gray-600 font-bold">
           Professional, licensed, and vetted therapists that you can trust
         </h2>
