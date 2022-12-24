@@ -20,7 +20,7 @@ function Appointment() {
       <div className='px-5 sm:pr-28 md:pr-56'><p className=' text-sm sm:text-base lg:text-lg text-justify  text-gray-600 font-medium'>Tap into the worlds largest network of licensed, accredited, and experienced therapists who can help you with a range of issues including depression, anxiety, relationships, trauma, grief, and more. with our therapists, you get the same professionalism and quality you would expect from an in-office therapist, but with the ability to communicate whenever and however you want.</p></div>
 
       <div className='pl-4'> 
-      <Button size="lg"  gradientDuoTone="purpleToBlue">
+      <Button  className='sm:w-48 md:w-52 lg:w-64 xl:w-72' gradientDuoTone="purpleToBlue">
       Book an Appointment
     </Button></div>
     </div>
