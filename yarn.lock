@@ -8102,7 +8102,7 @@
     "@remix-run/router" "1.2.0"
     "react-router" "6.6.0"
 
-"react-router@6.6.0":
+"react-router@^6.6.0", "react-router@6.6.0":
   "integrity" "sha512-+VPfCIaFbkW7BAiB/2oeprxKAt1KLbl+zXZ10CXOYezKWgBmTKyh8XjI53eLqY5kd7uY+V4rh3UW44FclwUU+Q=="
   "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.6.0.tgz"
   "version" "6.6.0"
