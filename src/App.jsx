@@ -10,7 +10,7 @@ import Navbar from './components/NavBar/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-screen	w-full	flex flex-col">
       <Navbar />
       <BrowserRouter>
         <Routes>
