@@ -1,9 +1,11 @@
 import React from 'react';
+import Communication from '../../components/Communication/Communication';
 import Appointment from '../../components/Appointment/Appointment'
 
 function Home() {
   return (<div className="Home">
-         <Appointment/>
+    <Appointment />
+    <Communication />
   </div>);
 }
 
