@@ -6,7 +6,7 @@ import AvatarGroup from './AvatarGroup';
 function Appointment() {
 
   return (
-    <div className=" md:pl-10 lg:pl-20 absolute w-full h-[490px] flex flex-col md:-gap-10  justify-evenly sm:justify-around items-start p-5 bg-[#FEE89E]">
+    <div className=" md:pl-10 lg:pl-20  w-full h-[490px] flex flex-col md:-gap-10  justify-evenly sm:justify-around items-start p-5 bg-[#FEE89E]">
       <div className="w-screen p-5 flex flex-row ">
         <h2 className=" text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600 font-bold">
           Professional, licensed, and vetted therapists  <br/> that you can trust
