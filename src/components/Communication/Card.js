@@ -6,7 +6,7 @@ function Card({ title, description, link, pic }) {
             <div className="p-5 flex flex-col content-center">
                 <img
                     src={pic}
-                    className="md:m-auto sm:h-12 "
+                    className="m-auto h-12 "
                     alt={title}
                 />
                 <a href={link}>

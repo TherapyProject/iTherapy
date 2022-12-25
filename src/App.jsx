@@ -11,7 +11,7 @@ import Navbar from './components/NavBar/Navbar';
 
 function App() {
   return (
-    <div className="App h-screen	w-full	flex flex-col">
+    <div className="App flex flex-col">
       <Navbar />
       <BrowserRouter>
         <Routes>
