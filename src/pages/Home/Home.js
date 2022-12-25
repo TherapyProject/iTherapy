@@ -1,6 +1,6 @@
 import React from 'react';
-import Appointment from '../../components/appointment/Appointment'
 import Communication from '../../components/Communication/Communication';
+import Appointment from '../../components/Appointment/Appointment'
 
 function Home() {
   return (<div className="Home">
