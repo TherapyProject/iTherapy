@@ -2,23 +2,22 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="p-10 bg-yellow-200 flex justify-around gap-10 absolute left-0 bottom-0 right-0">
-      <div>
-        <span className="text-3xl font-bold">Subscribe</span>
-        <br />
-        <br />
-        <span className="text-xl pt-6">
+    <footer className="flex-col sm:flex-row items-center p-6 bg-yellow-200 flex  gap-5 sm:gap-16 md:gap-32 md:justify-around xl:justify-between xl:px-40">
+      <div className='flex-col items-center md:justify-center  '>
+        <h5 className="text-2xl lg:text-3xl font-bold text-center">Subscribe</h5>
+        
+        <p className=" text-sm md:text-base lg:text-lg xl:text-xl block mt-2 text-center">
           We&apos;ll never to spam you or share your email
-        </span>
-        <div className="form-control w-80">
-          <div className="relative pt-6">
+        </p>
+        <div className="form-control w-80 items-center lg:ml-4 xl:ml-8 ">
+          <div className="relative pt-6 sm:w-64 lg:w-96 ">
             <input
               type="text"
               placeholder="Enter your e-mail"
-              className="input input-bordered w-full pr-16"
+              className="input input-bordered w-full pr-16 "
             />
             <button
-              className="btn btn-primary absolute top--6 right-0 rounded-l-none"
+              className=" btn btn-primary absolute top--6 right-0 rounded-l-none"
               type="submit"
             >
               Enter
@@ -26,22 +25,22 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-around gap-5 items-center">
-        <div className="mx-8 font-bold flex justify-end ">
-          <a className="mx-8" href="/home">
+      <div className="flex flex-col justify-around mt-2 sm:mt-8 md:m-0 gap-10 items-center">
+        <div className="mx-3 font-bold flex justify-end gap-5 lg:gap-10 md:text-lg lg:text-xl  ">
+          <a  href="/home">
             Home
           </a>
-          <a className="mx-8" href="/blogs">
+          <a  href="/blogs">
             Blogs
           </a>
-          <a className="mx-8" href="/about">
+          <a  href="/about">
             About
           </a>
-          <a className="mx-8" href="/contact">
+          <a  href="/contact">
             Contact
           </a>
         </div>
-        <div className="flex flex-row gap-10">
+        <div className="flex flex-row gap-10 lg:gap-16">
           <a href="https://twitter.com">
             <svg
               xmlns="http://www.w3.org/2000/svg"

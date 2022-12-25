@@ -8,12 +8,12 @@ import Blogs from './pages/Blogs/Blogs';
 import About from './pages/About/About';
 import Login from './pages/Login/Login';
 import Contact from './pages/Contact/Contact';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/NavBar/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex flex-col">
       <Navbar />
       <BrowserRouter>
         <Routes>
@@ -25,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

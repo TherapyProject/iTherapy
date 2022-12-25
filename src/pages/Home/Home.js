@@ -1,11 +1,13 @@
-
-import HeroSection from '../../components/HeroSection/HeroSection';
+import React from 'react';
+import Hero from '../../components/HeroSection/Hero';
+import Communication from '../../components/Communication/Communication';
 import Appointment from '../../components/Appointment/Appointment'
 
 function Home() {
   return (<div className="Home">
-          <HeroSection />
-         <Appointment/>
+    <Hero />
+    <Appointment />
+    <Communication />
   </div>);
 }
 
