@@ -1,5 +1,4 @@
-
-import { Avatar} from 'flowbite-react/lib/esm/components';
+import { Avatar } from 'flowbite-react/lib/esm/components';
 
 function AvatarGroup({size}){
 
@@ -9,7 +8,7 @@ function AvatarGroup({size}){
         img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
         rounded
         stacked
-       size={size}
+        size={size}
       />
       <Avatar
         img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
@@ -35,7 +34,8 @@ function AvatarGroup({size}){
         stacked
         size={size}
       />
-    </Avatar.Group>);
-  }
+    </Avatar.Group>
+  );
+}
 
-  export default AvatarGroup;
+export default AvatarGroup;
