@@ -1,12 +1,14 @@
 import React from 'react';
-import Appointment from '../../components/Appointment/Appointment';
+import Appointment from '../../components/appointment/Appointment';
 
 function Home() {
-  return (
-    <div className="Home">
-      <Appointment />
-    </div>
-  );
+  return (<div className="Home">
+    <Hero />
+    <Appointment />
+    <Communication />
+    <Purchase />
+
+  </div>);
 }
 
 export default Home;
