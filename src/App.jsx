@@ -1,5 +1,7 @@
-import React from 'react';
 
+
+
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Blogs from './pages/Blogs/Blogs';
@@ -11,7 +13,7 @@ import Navbar from './components/NavBar/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex flex-col">
       <Navbar />
       <BrowserRouter>
         <Routes>
