@@ -1,7 +1,7 @@
 const BlogCard = ({ title, img }) => {
   return (
-    <div className="blog-card">
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
+    <div className="blog-card md:w-1/3">
+      <div className="card w-full bg-base-100 shadow-xl image-full">
         <figure>
           <img src={img} alt="Random" />
         </figure>
