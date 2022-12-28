@@ -1,5 +1,5 @@
 
-import BlogCard from "./BlogCard";
+import BlogCard from "../BlogCard/BlogCard";
 
 // Blogcards goes inside here
 const RecentBlogs = () => {
