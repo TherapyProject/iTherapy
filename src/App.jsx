@@ -10,12 +10,14 @@ import BlogsPage from './pages/Blogs/BlogsPage';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import SignupPage from './pages/Signup/SignupPage';
 
 function App() {
   return (
     <div className="App flex flex-col">
       <Navbar />
       <BrowserRouter>
+      <SignupPage/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
