@@ -1,10 +1,10 @@
 // import React, { Component } from 'react';
-import rectangle from './about-images/Rectangle.svg'
+import rectangle from './about-images/Rectangle.svg';
 
 function About() {
   return (
     <div className="About  ">
-      <div className="flex flex-col px-20 py-14 sm:px-28 sm:text-center md:text-left mb-20">
+      <div className="flex flex-col px-4 py-14 sm:px-28 sm:text-center md:text-left mb-20">
         <h1 className="font-[Poppins]   sm:pl-0 text-4xl sm:text-5xl	text-center sm:text-left">
           HEALING!
         </h1>
@@ -12,7 +12,7 @@ function About() {
           some cool one liner !
         </h3>
 
-        <p className="  font-[Poppins]   md:text-lg leading-7	font-normal min-w-[250px] pr-12 px-3 m-7 sm:px-0 sm:m-0	sm:w-[1000px]   text-xs sm:text-left ">
+        <p className="  font-[Poppins] text-justify md:text-lg leading-7	font-normal min-w-[250px] pr-12 px-3 m-7 sm:px-0 sm:m-0	sm:w-[1000px]   text-xs sm:text-left ">
           At Healing &#39;we believe there is a better way to do things. A more
           valuable way where customers are earned rather than bought. We&#39;re
           obsessively passionate about it&#39; and our mission is to help people
@@ -25,13 +25,13 @@ function About() {
       </div>
       <div className="bg-[url('pages/About/about-images/backGround.png')] ">
         <div className="flex justify-center">
-          <div className="flex flex-col md:flex-row md:max-w-xl md:justify-between  py-10">
+          <div className="flex flex-col gap-5 md:flex-row md:max-w-xl md:justify-between  py-10">
             <img
               className="     md:w-72 px-10  sm:px-0"
               src={rectangle}
               alt="Therapist"
             />
-            <div className="p-6 flex flex-col justify-start ">
+            <div className="p-6 flex flex-col justify-start gap-8">
               <div className='w-40 '>
               <h1 className="text-gray-900  font-normal mb-2 text-3xl sm:pl-0 pl-2 whitespace-nowrap font-['Poppins']">
                 Our Founding
