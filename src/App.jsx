@@ -3,13 +3,13 @@
 
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Blogs from './pages/Blogs/Blogs';
-import About from './pages/About/About';
-import Login from './pages/Login/Login';
-import Contact from './pages/Contact/Contact';
-//import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/NavBar/Navbar';
+import About from './pages/About/About';
+import Blogs from './pages/Blogs/Blogs';
+import Contact from './pages/Contact/Contact';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </div>
   );
 }
