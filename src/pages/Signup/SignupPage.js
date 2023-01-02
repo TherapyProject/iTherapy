@@ -10,7 +10,7 @@ function SignupPage() {
       <div className=" bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 lg:ml-36 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Create and account 🐣
+                  Create an account 🐣
               </h1>
               <form className="space-y-4 md:space-y-6" action="#">
                   <div>
@@ -33,12 +33,28 @@ function SignupPage() {
                         <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">I accept the <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="w">Terms and Conditions</a></label>
                       </div>
                   </div>
+
+<div className='flex gap-5 justify-center items-center'>
+  <hr className="my-8 w-36 h-px bg-gray-200 border-0 dark:bg-gray-700" />
+  <span className="text-lg font-light text-gray-500 dark:text-gray-400">or</span>
+  <hr className="my-8 w-36 h-px bg-gray-200 border-0 dark:bg-gray-700" />
+
+</div>
+                   
                   <button type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account? <a href="w" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                   </p>
+
+        
               </form>
+              
           </div>
+
+     
+          
+
+          
       </div>
 
       <div className="hidden md:block md:max-w-md lg:max-w-lg">
