@@ -10,7 +10,6 @@ import Login from './pages/Login/Login';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
 
-
 function App() {
   return (
     <div className="App flex flex-col">
