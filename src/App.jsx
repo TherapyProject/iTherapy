@@ -7,6 +7,7 @@ import BlogsPage from './pages/Blogs/BlogsPage';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/team" element={<Team />} />
         </Routes>
       </BrowserRouter>

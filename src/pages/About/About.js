@@ -32,19 +32,19 @@ function About() {
               alt="Therapist"
             />
             <div className="p-6 flex flex-col justify-start gap-8">
-              <div className='w-40 '>
-              <h1 className="text-gray-900  font-normal mb-2 text-3xl sm:pl-0 pl-2 whitespace-nowrap font-['Poppins']">
-                Our Founding
-              </h1>
-              <p className="text-gray-700 w-96 font-normal text-xs sm:text-base  px-3 sm:px-0 font-['Poppins'] ">
-                Healing was founded by Payam Abubakr in 2021. It was called
-                Healing Online, and started as a blog and an online community
-                where some of the world&apos;s therapists shared their research
-                and ideas. We launched the Beginner&apos;s Guide to Therapy and
-                our first study, and that hub of industry expertise transformed
-                into a small consulting firm and led us to create the Online
-                Therapist of today!
-              </p>
+              <div className="w-40 ">
+                <h1 className="text-gray-900  font-normal mb-2 text-3xl sm:pl-0 pl-2 whitespace-nowrap font-['Poppins']">
+                  Our Founding
+                </h1>
+                <p className="text-gray-700 w-96 font-normal text-xs sm:text-base  px-3 sm:px-0 font-['Poppins'] ">
+                  Healing was founded by Payam Abubakr in 2021. It was called
+                  Healing Online, and started as a blog and an online community
+                  where some of the world&apos;s therapists shared their
+                  research and ideas. We launched the Beginner&apos;s Guide to
+                  Therapy and our first study, and that hub of industry
+                  expertise transformed into a small consulting firm and led us
+                  to create the Online Therapist of today!
+                </p>
               </div>
             </div>
           </div>
