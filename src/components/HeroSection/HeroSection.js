@@ -1,9 +1,9 @@
 import React from 'react';
-import therapist from './HeroSection-images/cartoonImage.svg'
+import therapist from './HeroSection-images/cartoonImage.svg';
 
 function Hero() {
   return (
-    <div className="flex md:flex-row flex-col md:pl-10 md:pb-40 lg:pl-20 bg-[url('components/HeroSection/HeroSection-images/linearbackground.png')]
+    <div className=" h-screen flex md:flex-row flex-col md:pl-10 md:pb-40 lg:pl-20 bg-[url('components/HeroSection/HeroSection-images/linearbackground.png')]
     ">
       <div className='flex flex-col w-2/5 items-start m-auto'>
         <p className="pl-1 md:text-4xl text-2xl font-['Poppins'] ">WE ARE HERE TO </p>
