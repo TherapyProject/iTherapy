@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
@@ -10,6 +7,7 @@ import BlogsPage from './pages/Blogs/BlogsPage';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import Team from './pages/Team/Team';
 
 function App() {
   return (
@@ -23,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
       </BrowserRouter>
       <Footer />
