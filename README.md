@@ -10,7 +10,7 @@ You'll be building this project with your peers. You'll be able to read more abo
 -Use of the React Framework or any other React based framework e.g. Gatsby, NextJS, Frontity, etc.
 -Users should be able to register or join a mailing list to receive more information. The user details should be saved in an online database.
 -Interact with an external API or backend platform (e.g. Firebase, Airtable, strapi, etc). The application should FETCH and POST from the API.
--The website should  preferably support 2 languages.
+-The website should preferably support 2 languages.
 -Unit testing should be utilized within the project e.g. Jest.
 -The application should also have a linting tool integrated. E.g. ESLint.
 -The website should have automated deployment to a server using Netlify or another platform.

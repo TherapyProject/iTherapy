@@ -6,14 +6,15 @@ import Purchase from '../../components/Purchase/Purchase';
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs';
 
 function Home() {
-  return (<div className="Home">
-    <Hero />
-    <Appointment />
-    <Communication />
-    <RecentBlogs/>
-    <Purchase />
-
-  </div>);
+  return (
+    <div className="Home">
+      <Hero />
+      <Appointment />
+      <Communication />
+      <RecentBlogs />
+      <Purchase />
+    </div>
+  );
 }
 
 export default Home;
