@@ -7,14 +7,15 @@ function Hero() {
 
   return (
     <div
-      className=" h-screen flex md:flex-row flex-col md:pl-10 md:pb-40 lg:pl-20 bg-[url('components/HeroSection/HeroSection-images/linearbackground.png')]
+      className=" font-['Poppins'] h-screen flex justify-center items-center md:flex-row flex-col md:pl-10 md:pb-40 lg:pl-20 bg-[url('components/HeroSection/HeroSection-images/linearbackground.png')]
     "
     >
-      <div className="flex flex-col w-2/5 items-start m-auto">
-        <p className="pl-1 md:text-4xl text-2xl font-['Poppins'] ">
-          WE ARE HERE TO{' '}
+      <div className="flex flex-col items-center gap-14 ml-4">
+        <div className='flex flex-col items-center justify-center gap-5'>
+        <p className=" text-4xl ">
+          WE ARE HERE TO
         </p>
-        <span className="md:pl-1 pr-5 md:text-9xl text-5xl font-['Poppins'] ">
+        <span className=" md:text-9xl text-7xl ">
           HELP
         </span>
         <button
@@ -27,7 +28,7 @@ function Hero() {
       </div>
       <div className=" md:w-3/5 pt-10 pb-5 w-full">
         <img
-          className="w-8/12 m-auto"
+          className=" h-64 mx-auto"
           src={therapist}
           alt="therapist talking to a patient "
         />
