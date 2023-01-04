@@ -3,9 +3,11 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="flex-col sm:flex-row items-center p-6 bg-yellow-200 flex  gap-5 sm:gap-16 md:gap-32 md:justify-around xl:justify-between xl:px-40">
-      <div className='flex-col items-center md:justify-center  '>
-        <h5 className="text-2xl lg:text-3xl font-bold text-center">Subscribe</h5>
-        
+      <div className="flex-col items-center md:justify-center  ">
+        <h5 className="text-2xl lg:text-3xl font-bold text-center">
+          Subscribe
+        </h5>
+
         <p className=" text-sm md:text-base lg:text-lg xl:text-xl block mt-2 text-center">
           We&apos;ll never to spam you or share your email
         </p>
@@ -27,18 +29,10 @@ function Footer() {
       </div>
       <div className="flex flex-col justify-around mt-2 sm:mt-8 md:m-0 gap-10 items-center">
         <div className="mx-3 font-bold flex justify-end gap-5 lg:gap-10 md:text-lg lg:text-xl  ">
-          <a  href="/home">
-            Home
-          </a>
-          <a  href="/blogs">
-            Blogs
-          </a>
-          <a  href="/about">
-            About
-          </a>
-          <a  href="/contact">
-            Contact
-          </a>
+          <a href="/home">Home</a>
+          <a href="/blogs">Blogs</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </div>
         <div className="flex flex-row gap-10 lg:gap-16">
           <a href="https://twitter.com">

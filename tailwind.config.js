@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-bg': "url('components/HeroSection/HeroSection-images/linearbackground.png')",
-      }
+        'hero-bg':
+          "url('components/HeroSection/HeroSection-images/linearbackground.png')",
+      },
     },
   },
   plugins: [require('daisyui'), require('flowbite/plugin')],
