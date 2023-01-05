@@ -13,7 +13,9 @@ function Contact() {
         </p>
       </div>
       <div>
-        <h2 className="text-xl text-center mt-8 mb-10">Type of contact</h2>
+        <h2 className="text-xl font-semibold text-center md:text-start mt-8 mb-10">
+          Type of contact
+        </h2>
         <div className="text-justify md:flex justify-between gap-8">
           <div className="flex flex-col text-xl gap-8 mb-8">
             <div className="flex items-center mr-4">
@@ -123,65 +125,60 @@ function Contact() {
               </label>
             </div>
           </div>
-          <div className="hidden md:block">
-            <img src={Image} alt="Contact Us" />
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-center">
-        <div className="flex w-full flex-wrap flex-row justify-center items-center sm:space-x-52">
-          <div className="form-control w-full max-w-sm">
-            <label className="label" htmlFor="name">
-              Full Name:
-              <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name here..."
-                className="input input-bordered w-full max-w-sm"
-              />
-            </label>
-
-            <div className="form-control w-full max-w-sm">
-              <label className="label" htmlFor="email">
-                Email:
-                <input
-                  type="text"
-                  id="email"
-                  placeholder="Enter your email address here..."
-                  className="input input-bordered w-full max-w-sm"
-                />
-              </label>
-
-              <div className="form-control w-full max-w-sm">
-                <label className="label" htmlFor="details">
-                  Details:
-                  <input
-                    type="text"
-                    id="details"
-                    placeholder="Enter your details here..."
-                    className="input input-bordered w-full max-w-sm	"
-                  />
-                </label>
-                <button className="btn btn-info mt-10" type="button">
-                  SUBMIT
-                </button>
-              </div>
+          <div className="flex flex-col">
+            <div className="hidden md:block">
+              <img src={Image} alt="Contact Us" />
             </div>
-          </div>
-
-          <div className="justify-self-start card bg-teal-50 text-primary-content mt-10 p-5 ">
-            <h2 className="card-title text-black">Find Us At:</h2>
-            <div className="card-body text-black">
-              <p>Nergiz Plaza</p>
-              <p>3rd Floor</p>
-              <p>Bakhtiyari Street 40m</p>
-              <p>Erbil, Iraq</p>
-              <p>44001</p>
+            <div className="block max-w-sm p-6 mt-20 mb-10 bg-teal-50 border border-gray-200 rounded-3xl shadow-md">
+              <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                Find Us At:
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                Nergiz Plaza <br />
+                3rd Floor <br />
+                Bakhityari Street 40m <br />
+                Erbil,Iraq <br />
+                44001 <br />
+              </p>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="md:form-control w-full max-w-xs">
+        <span className="label-text text-xl font-semibold mb-3">
+          Full Name:
+        </span>
+        <input
+          type="text"
+          placeholder="Enter your full name here..."
+          className="input input-bordered w-full max-w-xs"
+        />
+      </div>
+      <div className="form-control w-full max-w-xs">
+        <span className="label-text text-xl font-semibold mb-3 mt-3">
+          Email:
+        </span>
+        <input
+          type="text"
+          placeholder="Enter your email here..."
+          className="input input-bordered w-full max-w-xs"
+        />
+      </div>
+      <div className="form-control w-full max-w-xs">
+        <span className="label-text text-xl font-semibold mb-3 mt-3">
+          Details:
+        </span>
+        <input
+          type="text"
+          placeholder="Enter your details here..."
+          className="input input-bordered w-full max-w-xs"
+        />
+      </div>
+
+      <button className="btn btn-info mt-10" type="button">
+        SUBMIT
+      </button>
     </div>
   );
 }
