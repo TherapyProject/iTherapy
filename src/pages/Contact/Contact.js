@@ -145,7 +145,7 @@ function Contact() {
         </div>
       </div>
 
-      <div className="md:form-control w-full max-w-xs">
+      <div className="form-control w-full max-w-xs md:-mt-80">
         <span className="label-text text-xl font-semibold mb-3">
           Full Name:
         </span>
