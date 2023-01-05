@@ -16,7 +16,7 @@ function Contact() {
         <h2 className="text-xl font-semibold text-center md:text-start mt-8 mb-10">
           Type of contact
         </h2>
-        <div className="text-justify md:flex justify-between gap-8">
+        <div className=" md:flex justify-between gap-8">
           <div className="flex flex-col text-xl gap-8 mb-8">
             <div className="flex items-center mr-4">
               <label
