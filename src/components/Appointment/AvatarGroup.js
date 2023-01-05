@@ -1,39 +1,15 @@
-import { Avatar } from 'flowbite-react/lib/esm/components';
+import Avatar from "./Avatar";
 
-function AvatarGroup({ size }) {
+function AvatarGroup() {
   return (
-    <Avatar.Group>
-      <Avatar
-        img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-        rounded
-        stacked
-        size={size}
-      />
-      <Avatar
-        img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-        rounded
-        stacked
-        size={size}
-      />
-      <Avatar
-        img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-        rounded
-        stacked
-        size={size}
-      />
-      <Avatar
-        img="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-        rounded
-        stacked
-        size={size}
-      />
-      <Avatar
-        img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-        rounded
-        stacked
-        size={size}
-      />
-    </Avatar.Group>
+   <div className="flex mb-5 -space-x-4">
+    <Avatar imgSrc="https://flowbite.com/docs/images/people/profile-picture-1.jpg"/>
+    <Avatar imgSrc="https://flowbite.com/docs/images/people/profile-picture-2.jpg"/>
+    <Avatar imgSrc="https://flowbite.com/docs/images/people/profile-picture-3.jpg"/>
+    <Avatar imgSrc="https://flowbite.com/docs/images/people/profile-picture-4.jpg"/>
+    <Avatar imgSrc="https://flowbite.com/docs/images/people/profile-picture-5.jpg"/>
+
+</div>
   );
 }
 
