@@ -6,20 +6,19 @@ function Appointment() {
   const navigate = useNavigate();
 
   return (
-    <div className=" md:pl-10 lg:pl-20  w-full h-[490px] flex flex-col md:-gap-10  justify-evenly sm:justify-around items-start p-5 bg-[#FEE89E]">
-      <div className="w-full p-5 flex flex-row ">
-        <h2 className=" text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600 font-bold">
-          Professional, licensed, and vetted therapists <br /> that you can
-          trust
+    <div className="h-screen md:pl-10 lg:pl-20  w-full  flex flex-col items-center  md:-gap-10  justify-evenly sm:justify-around md:items-start p-5 bg-[#FEE89E]">
+      <div className="w-full p-5 flex flex-row justify-center sm:justify-start items-center text-center md:text-left">
+        <h2 className=" text-3xl sm:text-4xl md:text-5xl lg:text-4xl lg:mr-52 xl:text-5xl text-gray-600 font-bold">
+          Professional, licensed, and vetted therapists that you can trust
         </h2>
       </div>
 
-      <div className="pl-5 -my-4">
+      <div className="sm:pl-5  -my-4">
         <AvatarGroup size="lg" />
       </div>
 
-      <div className="px-5 sm:pr-28 md:pr-56">
-        <p className=" text-sm sm:text-base lg:text-lg text-justify  text-gray-600 font-medium">
+      <div className="px-5 sm:pr-10 md:pr-20 xl:pr-56">
+        <p className=" text-sm sm:text-base lg:text-lg text-justify  text-gray-600 font-semibold">
           Tap into the worlds largest network of licensed, accredited, and
           experienced therapists who can help you with a range of issues
           including depression, anxiety, relationships, trauma, grief, and more.
