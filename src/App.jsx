@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Navbar from './components/NavBar/Navbar';
 import { AuthProvider } from './contexts/AuthContext';
 import About from './pages/About/About';
+import Blogs from './pages/Blogs/Blogs';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
@@ -15,6 +16,17 @@ function App() {
   return (
     <div className="App flex flex-col">
       <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
       <AuthProvider>
         <BrowserRouter>
           <Routes>
