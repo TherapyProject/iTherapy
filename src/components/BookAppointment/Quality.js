@@ -14,7 +14,7 @@ export default function Quality({ quality, setQuality }) {
         id="radio"
         onChange={handleChange}
       >
-        <legend className="my-4">
+        <legend className="my-4 text-gray-800 dark:text-gray-200">
           Are there any specific qualities that you&apos;d like in a counsoler?
         </legend>
         <div className="flex items-center gap-2">
@@ -24,7 +24,7 @@ export default function Quality({ quality, setQuality }) {
             value="male"
             defaultChecked={quality === 'male'}
           />
-          <Label htmlFor="male" className="text-gray-200">
+          <Label htmlFor="male" className="text-gray-800 dark:text-gray-200">
             I prefer a male counselor
           </Label>
         </div>
@@ -35,7 +35,7 @@ export default function Quality({ quality, setQuality }) {
             value="female"
             defaultChecked={quality === 'female'}
           />
-          <Label htmlFor="female" className="text-gray-200">
+          <Label htmlFor="female" className="text-gray-800 dark:text-gray-200">
             I prefer a female counselor
           </Label>
         </div>
@@ -46,7 +46,7 @@ export default function Quality({ quality, setQuality }) {
             value="old"
             defaultChecked={quality === 'old'}
           />
-          <Label htmlFor="old" className="text-gray-200">
+          <Label htmlFor="old" className="text-gray-800 dark:text-gray-200">
             I prefer an older counselor (45+)
           </Label>
         </div>
@@ -57,7 +57,10 @@ export default function Quality({ quality, setQuality }) {
             value="non-religious"
             defaultChecked={quality === 'non-religious'}
           />
-          <Label htmlFor="non-religious" className="text-gray-200">
+          <Label
+            htmlFor="non-religious"
+            className="text-gray-800 dark:text-gray-200"
+          >
             I prefer a non-religious counselor
           </Label>
         </div>

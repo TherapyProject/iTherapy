@@ -57,10 +57,10 @@ export default function BookAppointment() {
 
   return (
     <div className="max-w-2xl mx-auto p-4 min-h-[75vh] flex flex-col justify-center items-center gap-8">
-      <h1 className="mb-4 text-4xl">
+      <h1 className="mb-4 text-4xl text-center font-bold text-gray-800 dark:text-gray-200">
         Let&apos;s match you with the right therapist
       </h1>
-      <p className="text-lg leading-relaxed">
+      <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200">
         Please fill out this short questionnaire to provide some general and
         anonymous background about you and issues you&apos;d like to deal with
         in online therapy. It would help us match you with the most suitable
@@ -97,7 +97,7 @@ export default function BookAppointment() {
           <div className="flex justify-between mt-8 items-center flex-wrap">
             <button
               type="button"
-              className="btn gap-2 flex items-center"
+              className="btn gap-2 flex items-center justify-start"
               onClick={handleBack}
             >
               <svg
@@ -113,7 +113,7 @@ export default function BookAppointment() {
             </button>
             <button
               type="button"
-              className="btn btn-error gap-2 flex-items-center"
+              className="btn btn-error gap-2 flex-items-center justify-end"
               onClick={handleReset}
             >
               Reset
@@ -134,7 +134,7 @@ export default function BookAppointment() {
             </button>
             <button
               type="button"
-              className="btn gap-2 flex items-center"
+              className="btn gap-2 flex items-center justify-end"
               onClick={handleNext}
             >
               Next
