@@ -1,7 +1,10 @@
 import { Button } from 'flowbite-react/lib/esm/components';
+import { useNavigate } from 'react-router';
 import AvatarGroup from './AvatarGroup';
 
 function Appointment() {
+  const navigate = useNavigate();
+
   return (
     <div className=" md:pl-10 lg:pl-20  w-full h-[490px] flex flex-col md:-gap-10  justify-evenly sm:justify-around items-start p-5 bg-[#FEE89E]">
       <div className="w-full p-5 flex flex-row ">
@@ -30,6 +33,7 @@ function Appointment() {
         <Button
           className="sm:w-48 md:w-52 lg:w-64 xl:w-72"
           gradientDuoTone="purpleToBlue"
+          onClick={() => navigate('/book')}
         >
           Book an Appointment
         </Button>

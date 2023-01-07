@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import therapist from './HeroSection-images/cartoonImage.svg';
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <div
       className=" h-screen flex md:flex-row flex-col md:pl-10 md:pb-40 lg:pl-20 bg-[url('components/HeroSection/HeroSection-images/linearbackground.png')]
@@ -17,6 +20,7 @@ function Hero() {
         <button
           type="button"
           className=" md:py-2.5 md:px-1.5 md:mt-11 mt-6 text-black font-semibold border border-indigo-300 bg-cyan-500  rounded-md transition duration-500  select-none hover:bg-cyan-600 focus:outline-none focus:shadow-outline  "
+          onClick={() => navigate('/book')}
         >
           BOOK AN APPOINTMENT
         </button>
