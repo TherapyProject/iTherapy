@@ -14,7 +14,9 @@ export default function SeenTherapist({ seenTherapist, setSeenTherapist }) {
         id="radio"
         onChange={handleChange}
       >
-        <legend className="my-4">Have you seen a therapist before?</legend>
+        <legend className="my-4 text-gray-800 dark:text-gray-200">
+          Have you seen a therapist before?
+        </legend>
         <div className="flex items-center gap-2">
           <Radio
             id="yes"
@@ -22,7 +24,7 @@ export default function SeenTherapist({ seenTherapist, setSeenTherapist }) {
             value="yes"
             defaultChecked={seenTherapist === 'yes'}
           />
-          <Label htmlFor="yes" className="text-gray-200">
+          <Label htmlFor="yes" className="text-gray-800 dark:text-gray-200">
             Yes
           </Label>
         </div>
@@ -33,7 +35,7 @@ export default function SeenTherapist({ seenTherapist, setSeenTherapist }) {
             value="no"
             defaultChecked={seenTherapist === 'no'}
           />
-          <Label htmlFor="no" className="text-gray-200">
+          <Label htmlFor="no" className="text-gray-800 dark:text-gray-200">
             No
           </Label>
         </div>

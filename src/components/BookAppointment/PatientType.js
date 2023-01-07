@@ -14,7 +14,7 @@ export default function PatientType({ type, setType }) {
         id="radio"
         onChange={handleChange}
       >
-        <legend className="my-4">
+        <legend className="my-4 text-gray-800 dark:text-gray-200">
           What type of counseling are you looking for?
         </legend>
         <div className="flex items-center gap-2">
@@ -24,9 +24,7 @@ export default function PatientType({ type, setType }) {
             value="individual"
             defaultChecked={type === 'individual'}
           />
-          <Label htmlFor="individual" className="text-gray-200">
-            Individual Counseling
-          </Label>
+          <Label htmlFor="individual">Individual Counseling</Label>
         </div>
         <div className="flex items-center gap-2">
           <Radio
@@ -35,9 +33,7 @@ export default function PatientType({ type, setType }) {
             value="teen"
             defaultChecked={type === 'teen'}
           />
-          <Label htmlFor="teen" className="text-gray-200">
-            Teen Counseling (For my child)
-          </Label>
+          <Label htmlFor="teen">Teen Counseling (For my child)</Label>
         </div>
       </fieldset>
     </div>

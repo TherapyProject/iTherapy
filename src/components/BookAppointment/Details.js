@@ -12,7 +12,7 @@ export default function Details({ details, setDetails }) {
         <Label
           htmlFor="comment"
           value="Additional Information"
-          className="text-gray-200"
+          className="text-gray-800 dark:text-gray-200"
         />
       </div>
       <Textarea

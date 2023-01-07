@@ -14,7 +14,7 @@ export default function Issues({ issue, setIssue }) {
         id="radio"
         onChange={handleChange}
       >
-        <legend className="my-4">
+        <legend className="my-4 text-gray-800 dark:text-gray-200">
           Are there any issues you would like to focus on?
         </legend>
         <div className="flex items-center gap-2">
@@ -24,7 +24,10 @@ export default function Issues({ issue, setIssue }) {
             value="depression"
             defaultChecked={issue === 'depression'}
           />
-          <Label htmlFor="depression" className="text-gray-200">
+          <Label
+            htmlFor="depression"
+            className="text-gray-800 dark:text-gray-200"
+          >
             Depression
           </Label>
         </div>
@@ -35,7 +38,10 @@ export default function Issues({ issue, setIssue }) {
             value="stress-anxiety"
             defaultChecked={issue === 'stress-anxiety'}
           />
-          <Label htmlFor="stress-anxiety" className="text-gray-200">
+          <Label
+            htmlFor="stress-anxiety"
+            className="text-gray-800 dark:text-gray-200"
+          >
             Stress and anxiety
           </Label>
         </div>
@@ -46,7 +52,10 @@ export default function Issues({ issue, setIssue }) {
             value="relationship"
             defaultChecked={issue === 'relationship'}
           />
-          <Label htmlFor="relationship" className="text-gray-200">
+          <Label
+            htmlFor="relationship"
+            className="text-gray-800 dark:text-gray-200"
+          >
             Relationship
           </Label>
         </div>
@@ -57,7 +66,7 @@ export default function Issues({ issue, setIssue }) {
             value="family"
             defaultChecked={issue === 'family'}
           />
-          <Label htmlFor="family" className="text-gray-200">
+          <Label htmlFor="family" className="text-gray-800 dark:text-gray-200">
             Family
           </Label>
         </div>
@@ -68,7 +77,10 @@ export default function Issues({ issue, setIssue }) {
             value="trauma-abuse"
             defaultChecked={issue === 'trauma-abuse'}
           />
-          <Label htmlFor="trauma-abuse" className="text-gray-200">
+          <Label
+            htmlFor="trauma-abuse"
+            className="text-gray-800 dark:text-gray-200"
+          >
             Trauma Abuse
           </Label>
         </div>
@@ -79,7 +91,10 @@ export default function Issues({ issue, setIssue }) {
             value="eating-disorder"
             defaultChecked={issue === 'eating-disorder'}
           />
-          <Label htmlFor="eating-disorder" className="text-gray-200">
+          <Label
+            htmlFor="eating-disorder"
+            className="text-gray-800 dark:text-gray-200"
+          >
             Eating Disorder
           </Label>
         </div>

@@ -14,7 +14,9 @@ export default function Relationship({ relationship, setRelationship }) {
         id="radio"
         onChange={handleChange}
       >
-        <legend className="my-4">What is your relationship status?</legend>
+        <legend className="my-4 text-gray-800 dark:text-gray-200">
+          What is your relationship status?
+        </legend>
         <div className="flex items-center gap-2">
           <Radio
             id="single"
@@ -22,7 +24,7 @@ export default function Relationship({ relationship, setRelationship }) {
             value="single"
             defaultChecked={relationship === 'single'}
           />
-          <Label htmlFor="single" className="text-gray-200">
+          <Label htmlFor="single" className="text-gray-800 dark:text-gray-200">
             Single
           </Label>
         </div>
@@ -33,7 +35,7 @@ export default function Relationship({ relationship, setRelationship }) {
             value="married"
             defaultChecked={relationship === 'married'}
           />
-          <Label htmlFor="married" className="text-gray-200">
+          <Label htmlFor="married" className="text-gray-800 dark:text-gray-200">
             Married
           </Label>
         </div>
@@ -44,7 +46,10 @@ export default function Relationship({ relationship, setRelationship }) {
             value="divorced"
             defaultChecked={relationship === 'divorced'}
           />
-          <Label htmlFor="divorced" className="text-gray-200">
+          <Label
+            htmlFor="divorced"
+            className="text-gray-800 dark:text-gray-200"
+          >
             Divorced
           </Label>
         </div>

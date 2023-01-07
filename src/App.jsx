@@ -15,7 +15,7 @@ import Team from './pages/Team/Team';
 
 function App() {
   return (
-    <div className="App flex flex-col">
+    <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-neutral-900 dark:text-neutral-100">
       <Navbar />
       <BrowserRouter>
         <Routes>
