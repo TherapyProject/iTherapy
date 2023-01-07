@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Navbar from './components/NavBar/Navbar';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
+import BookAppointment from './pages/Book/BookAppointment';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/book" element={<BookAppointment />} />
         </Routes>
       </BrowserRouter>
       <Footer />
