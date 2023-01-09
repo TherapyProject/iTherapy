@@ -1,7 +1,12 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+// import firebase from 'firebase/app';
+// import 'firebase/auth';
+// the above import from v8 but they are not working with v9, we dont need to downgrade
+// v9 compat packages are API compatible with v8 code
 
-const app = initializeApp({
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+
+const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
@@ -11,5 +16,5 @@ const app = initializeApp({
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
 
-export const auth = getAuth(app);
+export const auth = app.auth();
 export default app;
