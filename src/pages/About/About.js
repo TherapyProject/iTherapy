@@ -1,4 +1,3 @@
-// import React, { Component } from 'react';
 import rectangle from './about-images/Rectangle.svg';
 
 function About() {

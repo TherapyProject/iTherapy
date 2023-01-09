@@ -5,7 +5,7 @@ function PurchaseCard({ title, price }) {
         <h2 className="card-title text-3xl justify-center">{title}</h2>
         <span className="text-xl text-center">{price}$</span>
         <div className="card-actions justify-center">
-          <a href="./BuyTicket.js">
+          <a href="./BuyTicket">
             <button href='./' type="button" className="btn btn-info">
             PURCHASE
           </button>
