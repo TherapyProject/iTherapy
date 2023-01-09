@@ -1,18 +1,6 @@
-import React, { useRef } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import Poster from './Images/online-meetings.png';
+import Poster from '../../images/SignupImage.png';
 
 function SignupPage() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    signup(emailRef.current.value, passwordRef.current.value);
-  }
-
   return (
     <section className="bg-stone-50 px-12 py-10  dark:bg-gray-900 grid md:grid-cols-2  w-screen  items-center md:space-x-10">
       <div className=" bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 lg:ml-36 dark:bg-gray-800 dark:border-gray-700">
@@ -20,25 +8,20 @@ function SignupPage() {
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Create an account 🐣
           </h1>
-          <form
-            className="space-y-4 md:space-y-6"
-            action="#"
-            onSubmit={handleSubmit}
-          >
+          <form className="space-y-4 md:space-y-6" action="#">
             <div>
               <label
                 htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Your email
+                Your Email
                 <input
                   type="email"
                   name="email"
                   id="email"
                   className="bg-gray-50 border border-gray-300 placeholder:text-gray-400 placeholder:font-normal text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  placeholder="Enter Your Email"
                   required=""
-                  ref={emailRef}
                 />
               </label>
             </div>
@@ -52,10 +35,9 @@ function SignupPage() {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="••••••••"
+                  placeholder="Enter Your Password"
                   className="bg-gray-50 border border-gray-300  placeholder:text-gray-400 placeholder:font-normal text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required=""
-                  ref={passwordRef}
                 />
               </label>
             </div>
@@ -64,15 +46,14 @@ function SignupPage() {
                 htmlFor="confirm-password"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Confirm password
+                Confirm Password
                 <input
                   type="confirm-password"
                   name="confirm-password"
                   id="confirm-password"
-                  placeholder="••••••••"
+                  placeholder="Confirm Password"
                   className="bg-gray-50 border border-gray-300 placeholder:text-gray-400 placeholder:font-normal text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required=""
-                  ref={passwordConfirmRef}
                 />
               </label>
             </div>
@@ -104,7 +85,7 @@ function SignupPage() {
 
             <button
               type="submit"
-              className="w-full text-white bg-blue-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              className="w-full text-white bg-cyan-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Create an account
             </button>
@@ -166,7 +147,7 @@ function SignupPage() {
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               Already have an account?{' '}
               <a
-                href="w"
+                href="login"
                 className="font-medium text-primary-600 hover:underline dark:text-primary-500"
               >
                 Login here
