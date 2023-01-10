@@ -13,12 +13,8 @@ export function AuthProvider({ children }) {
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
-  // need to search what does mean
+
   const value = useMemo(() => ({ currentUser, signup }), [currentUser, signup]);
-  // const value = {
-  //   currentUser,
-  //   signup,
-  // };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
