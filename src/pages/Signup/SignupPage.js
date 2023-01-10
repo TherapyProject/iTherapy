@@ -6,31 +6,11 @@ function SignupPage() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  // const [error, setError] = useState('');
-  // const [loading, setLoading] = useState(false);
-  // const navigate = useNavigate();
   const { signup } = useAuth();
 
-  // async function handleSubmit(e) {
   function handleSubmit(e) {
     e.preventDefault();
-
-    //   if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-    //     return setError('Passwords do not match');
-    //   }
-
-    //   try {
-    //     setError(' ');
-    //     setLoading(true);
-    // await signup(emailRef.current.value, passwordRef.current.value);
     signup(emailRef.current.value, passwordRef.current.value);
-    //     navigate('/');
-    //   } catch {
-    //     setError('Failed to create an account');
-    //   }
-
-    //   setLoading(false);
-    //   return setError(error);
   }
 
   return (
@@ -125,7 +105,6 @@ function SignupPage() {
             <button
               type="submit"
               className="w-full text-white bg-blue-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              // disabled={loading}
             >
               Create an account
             </button>
