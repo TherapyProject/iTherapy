@@ -1,8 +1,3 @@
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
-// the above import from v8 but they are not working with v9, we dont need to downgrade
-// v9 compat packages are API compatible with v8 code
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
