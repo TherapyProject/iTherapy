@@ -9,13 +9,12 @@ function Appointment() {
     <div className="h-screen md:pl-10 lg:pl-20  w-full  flex flex-col items-center  md:-gap-10  justify-evenly sm:justify-around md:items-start p-5 bg-[#FEE89E]">
       <div className="w-full p-5 flex flex-row justify-center sm:justify-start items-center text-center md:text-left">
         <h2 className=" text-3xl sm:text-4xl md:text-5xl lg:text-4xl lg:mr-52 xl:text-5xl text-gray-600 font-bold">
-          Professional, licensed, and vetted therapists that you can
-          trust
+          Professional, licensed, and vetted therapists that you can trust
         </h2>
       </div>
 
       <div className="sm:pl-5  -my-4">
-        <AvatarGroup size="lg"  />
+        <AvatarGroup size="lg" />
       </div>
 
       <div className="px-5 sm:pr-10 md:pr-20 xl:pr-56">
