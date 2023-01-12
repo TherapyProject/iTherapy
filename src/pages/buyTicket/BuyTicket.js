@@ -8,11 +8,11 @@ function BuyTicket() {
   return (
     <div>
       <div className=" py-10 ">
-        <div className="px-40">
-          <h1 className=" font-[Poppins]    text-xl sm:text-3xl	 whitespace-nowrap sm:text-left ">
+        <div className=" text-center px-10">
+          <h1 className=" font-[Poppins]    text-xl sm:text-3xl	 whitespace-nowrap  ">
             SELECT CARD
           </h1>
-          <p className="font-[Poppins] w-32  sm:w-0 sm:whitespace-nowrap  text-slate-400 pb-10 text-sm  sm:text-xl       ">
+          <p className="font-[Poppins]    sm:whitespace-nowrap  text-slate-400 pb-10 text-sm  sm:text-xl       ">
             Please select the card you want to buy the tickets with
           </p>
         </div>
