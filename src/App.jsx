@@ -12,13 +12,14 @@ import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import LearnMore from './pages/Learn-More-Page/LearnMore';
 import Login from './pages/Login/Login';
+import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
 
 function App() {
   return (
     <AuthProvider>
-      <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-neutral-900 dark:text-neutral-100">
+      <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <Navbar />
         <BrowserRouter>
           <Routes>
@@ -37,6 +38,9 @@ function App() {
               <Route path="/book" element={<BookAppointment />} />
             </Route>
             <Route path="/learnmore" element={<LearnMore />} />
+            <Route path="/profile" element={<PrivateRoute />}>
+              <Route path="/profile" element={<Profile />} />
+            </Route>
           </Routes>
         </BrowserRouter>
         <Footer />
