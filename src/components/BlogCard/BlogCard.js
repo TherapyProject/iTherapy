@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 const BlogCard = ({
   blogImg,
   blogTitle,
@@ -8,12 +8,33 @@ const BlogCard = ({
   minsRead,
 }) => {
   return (
-    <div className=" flex flex-col max-w-sm h-32 sm:h-40 md:h-52 lg:h-60 xl:h-72 2xl:h-96 bg-red-400 ">
-      <div className=" w-full h-60 bg-blue-400" >
-      <img src={blogImg} className="object-cover object-center" alt="blog" />
-      </div>
-      <h1>{blogTitle}</h1>
+   <div className=" w-40 sm:w-64 md:w-72 lg:w-80 xl:w-96 md:m-3 hover:cursor-pointer hover:scale-105 transition duration-300 ">
+  <div><img src={blogImg} alt="Shoes" className="object-cover rounded-md object-center w-full h-24 sm:h-32 md:h-48 " /></div>
+  <div className="pt-2 flex flex-col justify-between gap-1">
+    <h2 className="text-xs md:text-sm xl:text-base 2xl:text-lg font-bold truncate">{blogTitle}</h2>
+    
+    <div className="flex justify-between items-center pt-1 lg:pt-2 xl:pt-3">
+<div className="flex items-center justify-between space-x-2">
+    <img className="w-5 h-5 sm:h-7 sm:w-7 lg:w-9 lg:h-9 rounded-full" src={authImg} alt="authImage"/>
+    <div className="font-medium dark:text-white">
+        <div className="text-[10px] lg:text-sm xl:text-base">{authName}</div>
+        <div className="text-[8px] text-gray-500 dark:text-gray-400">{authTitle}</div>
     </div>
+
+</div>
+
+      <span className=" bg-gradient-to-r from-yellow-400 to-yellow-300 px-1 py-1 text-[8px] rounded text-white dark:text-gray-400">{minsRead} min read</span>
+   
+    </div>
+    
+
+</div>
+
+
+
+
+
+ </div>
   );
 };
 

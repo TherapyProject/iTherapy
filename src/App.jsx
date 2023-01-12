@@ -28,6 +28,8 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />
             <Route path="/book" element={<BookAppointment />} />
+            
+
           </Routes>
         </BrowserRouter>
         <Footer />
