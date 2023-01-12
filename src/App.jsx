@@ -6,13 +6,13 @@ import { AuthProvider } from './contexts/AuthContext';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import BookAppointment from './pages/Book/BookAppointment';
+import BuyTicket from './pages/buyTicket/BuyTicket';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
-import BuyTicket from './pages/buyTicket/BuyTicket';
 
 function App() {
   return (
