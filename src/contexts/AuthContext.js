@@ -1,4 +1,9 @@
-import { FacebookAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import {
+  FacebookAuthProvider,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup
+} from 'firebase/auth';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { auth } from '../backend/firebase';
 
@@ -17,15 +22,23 @@ export function AuthProvider({ children }) {
 
   const signInWithFacebook = () => {
     const provider = new FacebookAuthProvider();
-    const authtest = getAuth();
-    signInWithPopup(authtest, provider).then((result) => {
+    const authFB = getAuth();
+    signInWithPopup(authFB, provider).then((result) => {
+      setCurrentUser(result.user);
+    });
+  };
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    const authG = getAuth();
+    signInWithPopup(authG, provider).then((result) => {
       setCurrentUser(result.user);
     });
   };
 
   const value = useMemo(
-    () => ({ currentUser, signup, signInWithFacebook }),
-    [currentUser, signup, signInWithFacebook]
+    () => ({ currentUser, signup, signInWithFacebook, signInWithGoogle }),
+    [currentUser, signup, signInWithFacebook, signInWithGoogle]
   );
 
   useEffect(() => {

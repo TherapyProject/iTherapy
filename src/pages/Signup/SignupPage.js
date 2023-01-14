@@ -9,7 +9,7 @@ function SignupPage() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup, signInWithFacebook } = useAuth();
+  const { signup, signInWithFacebook, signInWithGoogle } = useAuth();
   const [error, setError] = useState('');
   const [signupSuccess, setSignupSuccess] = useState(false);
 
@@ -18,7 +18,7 @@ function SignupPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (passwordConfirmRef.current.value !== passwordRef.current.value) {
-      return setError('Passwords are not match');
+      return setError('Passwords do not match');
     }
     try {
       setError('');
@@ -29,7 +29,7 @@ function SignupPage() {
       }, 3000);
       return () => clearTimeout(timer);
     } catch (firebaseError) {
-      return setError(firebaseError.code);
+      return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
     }
   }
 
@@ -177,6 +177,7 @@ function SignupPage() {
               </button>
 
               <button
+                onClick={signInWithGoogle}
                 type="button"
                 className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
               >
