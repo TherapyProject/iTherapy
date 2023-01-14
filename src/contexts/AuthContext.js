@@ -1,3 +1,4 @@
+import { FacebookAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { auth } from '../backend/firebase';
 
@@ -14,7 +15,18 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
-  const value = useMemo(() => ({ currentUser, signup }), [currentUser, signup]);
+  const signInWithFacebook = () => {
+    const provider = new FacebookAuthProvider();
+    const authtest = getAuth();
+    signInWithPopup(authtest, provider).then((result) => {
+      setCurrentUser(result.user);
+    });
+  };
+
+  const value = useMemo(
+    () => ({ currentUser, signup, signInWithFacebook }),
+    [currentUser, signup, signInWithFacebook]
+  );
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
