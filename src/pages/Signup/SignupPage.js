@@ -9,7 +9,7 @@ function SignupPage() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { signup, signInWithFacebook, signInWithGoogle } = useAuth();
   const [error, setError] = useState('');
   const [signupSuccess, setSignupSuccess] = useState(false);
 
@@ -18,22 +18,19 @@ function SignupPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (passwordConfirmRef.current.value !== passwordRef.current.value) {
-      return setError('passwords do not match');
+      return setError('Passwords do not match');
     }
     try {
       setError('');
       await signup(emailRef.current.value, passwordRef.current.value);
-      // useEffect(() => {
       setSignupSuccess(true);
       const timer = setTimeout(() => {
         return navigate('/login');
       }, 3000);
       return () => clearTimeout(timer);
-      // }, []);
     } catch (firebaseError) {
-      return setError(firebaseError.code);
+      return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
     }
-    // return setError(error);
   }
 
   return (
@@ -157,6 +154,7 @@ function SignupPage() {
 
             <div className="flex flex-col justify-center items-center">
               <button
+                onClick={signInWithFacebook}
                 type="button"
                 className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
               >
@@ -179,6 +177,7 @@ function SignupPage() {
               </button>
 
               <button
+                onClick={signInWithGoogle}
                 type="button"
                 className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
               >

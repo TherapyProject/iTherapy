@@ -1,3 +1,9 @@
+import {
+  FacebookAuthProvider,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup
+} from 'firebase/auth';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { auth } from '../backend/firebase';
 
@@ -14,7 +20,26 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
-  const value = useMemo(() => ({ currentUser, signup }), [currentUser, signup]);
+  const signInWithFacebook = () => {
+    const provider = new FacebookAuthProvider();
+    const authFB = getAuth();
+    signInWithPopup(authFB, provider).then((result) => {
+      setCurrentUser(result.user);
+    });
+  };
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    const authG = getAuth();
+    signInWithPopup(authG, provider).then((result) => {
+      setCurrentUser(result.user);
+    });
+  };
+
+  const value = useMemo(
+    () => ({ currentUser, signup, signInWithFacebook, signInWithGoogle }),
+    [currentUser, signup, signInWithFacebook, signInWithGoogle]
+  );
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
