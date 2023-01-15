@@ -4,10 +4,10 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from 'firebase/auth';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { auth } from '../backend/firebase';
 
-const AuthContext = React.createContext();
+const AuthContext = createContext();
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -15,6 +15,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+  
 function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
   }
@@ -37,7 +38,7 @@ function login(email, password) {
     const authG = getAuth();
     signInWithPopup(authG, provider).then((result) => {
       setCurrentUser(result.user);
-    });
+    }); 
   };
 
   const value = useMemo(
