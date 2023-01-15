@@ -31,8 +31,7 @@ export const Blogs = [
   {
     title: 'a Guide On How To Enjoy Snow and Date Syrup in winter',
     img: 'https://assets.marthastewart.com/styles/wmax-750/d41/pouring-maple-syrup-on-snow-6505-26a98986/pouring-maple-syrup-on-snow-6505-26a98986_horiz.jpg?itok=rgVrCyMt',
-    authImg:
-      'https://raprsi.com/content/upload/1/nawdaran/mam-vandam.jpg',
+    authImg: 'https://raprsi.com/content/upload/1/nawdaran/mam-vandam.jpg',
     authName: 'Mam Vandam',
     authTitle: 'public figure',
     minsRead: '10',
