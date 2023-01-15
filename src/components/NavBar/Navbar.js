@@ -1,7 +1,11 @@
 import React from 'react';
+import { useAuth } from '../../contexts/AuthContext';
 import Logo from '../../images/logo.png';
 
 function Navbar() {
+  const { currentUser, logout } = useAuth();
+  // const [currentUser] = useState(isAuth());
+  console.log('amal', currentUser);
   return (
     <div className="Navbar">
       <nav className="bg-cyan-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
@@ -54,14 +58,26 @@ function Navbar() {
                   Contact Us
                 </a>
               </li>
-              <a href="/login">
-                <button
-                  type="button"
-                  className=" font-['Poppins'] font-medium text-base text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300  rounded-md px-6 py-1.5 mt-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  Log In
-                </button>
-              </a>
+              {!currentUser ? (
+                <a href="/login">
+                  <button
+                    type="button"
+                    className=" font-['Poppins'] font-medium text-base text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300  rounded-md px-6 py-1.5 mt-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                  >
+                    Log In
+                  </button>
+                </a>
+              ) : (
+                <a href="/">
+                  <button
+                    onClick={logout}
+                    type="button"
+                    className=" font-['Poppins'] font-medium text-base text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300  rounded-md px-6 py-1.5 mt-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                  >
+                    Log out
+                  </button>
+                </a>
+              )}
             </ul>
           </div>
         </div>
