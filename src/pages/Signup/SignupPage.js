@@ -1,25 +1,60 @@
-import React, { useRef } from 'react';
+import { Alert } from 'flowbite-react/lib/esm/components';
+import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Poster from './Images/online-meetings.png';
 
 function SignupPage() {
+  const required = true;
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { signup, signInWithFacebook, signInWithGoogle } = useAuth();
+  const [error, setError] = useState('');
+  const [signupSuccess, setSignupSuccess] = useState(false);
 
-  function handleSubmit(e) {
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    signup(emailRef.current.value, passwordRef.current.value);
+    if (passwordConfirmRef.current.value !== passwordRef.current.value) {
+      return setError('Passwords do not match');
+    }
+    try {
+      setError('');
+      await signup(emailRef.current.value, passwordRef.current.value);
+      setSignupSuccess(true);
+      const timer = setTimeout(() => {
+        return navigate('/login');
+      }, 3000);
+      return () => clearTimeout(timer);
+    } catch (firebaseError) {
+      return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
+    }
   }
 
   return (
     <section className="bg-stone-50 px-12 py-10  dark:bg-gray-900 grid md:grid-cols-2  w-screen  items-center md:space-x-10">
       <div className=" bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 lg:ml-36 dark:bg-gray-800 dark:border-gray-700">
+        {signupSuccess && (
+          <Alert color="success">
+            <span>
+              <span className="font-medium">Alert!</span> You successfully
+              signed up, please login in
+            </span>
+          </Alert>
+        )}
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Create an account 🐣
           </h1>
+          {error && (
+            <Alert color="failure">
+              <span>
+                <span className="font-medium">Alert!</span> {error}{' '}
+              </span>
+            </Alert>
+          )}
           <form
             className="space-y-4 md:space-y-6"
             action="#"
@@ -37,7 +72,7 @@ function SignupPage() {
                   id="email"
                   className="bg-gray-50 border border-gray-300 placeholder:text-gray-400 placeholder:font-normal text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@company.com"
-                  required=""
+                  required={required}
                   ref={emailRef}
                 />
               </label>
@@ -54,7 +89,7 @@ function SignupPage() {
                   id="password"
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300  placeholder:text-gray-400 placeholder:font-normal text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required=""
+                  required={required}
                   ref={passwordRef}
                 />
               </label>
@@ -66,12 +101,12 @@ function SignupPage() {
               >
                 Confirm password
                 <input
-                  type="confirm-password"
+                  type="password"
                   name="confirm-password"
                   id="confirm-password"
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 placeholder:text-gray-400 placeholder:font-normal text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required=""
+                  required={required}
                   ref={passwordConfirmRef}
                 />
               </label>
@@ -83,7 +118,7 @@ function SignupPage() {
                   aria-describedby="terms"
                   type="checkbox"
                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                  required=""
+                  required={required}
                 />
               </div>
               <div className="ml-3 text-sm">
@@ -119,6 +154,7 @@ function SignupPage() {
 
             <div className="flex flex-col justify-center items-center">
               <button
+                onClick={signInWithFacebook}
                 type="button"
                 className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
               >
@@ -141,6 +177,7 @@ function SignupPage() {
               </button>
 
               <button
+                onClick={signInWithGoogle}
                 type="button"
                 className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
               >
