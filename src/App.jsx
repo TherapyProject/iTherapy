@@ -7,6 +7,7 @@ import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import Contact from './pages/Contact/Contact';
+import ContactThanks from './pages/Contact/ContactThanks';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import SignupPage from './pages/Signup/SignupPage';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />
             <Route path="/book" element={<BookAppointment />} />
+            <Route path="/contactthanks" element={<ContactThanks />} />
           </Routes>
         </BrowserRouter>
         <Footer />

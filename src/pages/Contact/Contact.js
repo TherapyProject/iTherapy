@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { db } from '../../backend/firebase';
 import Image from '../../images/Image.png';
 
-function Contact() {
+const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [details, setDetails] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    db.collection('contacts')
+      .add({
+        name,
+        email,
+        details,
+      })
+      .then(() => {
+        // eslint-disable-next-line
+        alert('Message has been submitted');
+      })
+      .catch((error) => {
+        // eslint-disable-next-line
+        alert(error.message);
+      });
+
+    setName('');
+    setEmail('');
+    setDetails('');
+  };
+
   return (
     <div className="p-10">
       <div>
@@ -145,7 +173,10 @@ function Contact() {
         </div>
       </div>
 
-      <div className="form-control w-full max-w-xs md:-mt-80">
+      <div
+        className="form-control w-full max-w-xs md:-mt-80"
+        onSubmit={handleSubmit}
+      >
         <span className="label-text text-xl font-semibold mb-3">
           Full Name:
         </span>
@@ -153,6 +184,8 @@ function Contact() {
           type="text"
           placeholder="Enter your full name here..."
           className="input input-bordered w-full max-w-xs"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="form-control w-full max-w-xs">
@@ -163,24 +196,29 @@ function Contact() {
           type="text"
           placeholder="Enter your email here..."
           className="input input-bordered w-full max-w-xs"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="form-control w-full max-w-xs">
         <span className="label-text text-xl font-semibold mb-3 mt-3">
           Details:
         </span>
-        <input
+        <textarea
           type="text"
           placeholder="Enter your details here..."
           className="input input-bordered w-full max-w-xs"
+          value={details}
+          onChange={(e) => setDetails(e.target.value)}
         />
       </div>
-
-      <button className="btn btn-info mt-10" type="button">
-        SUBMIT
-      </button>
+      <a href="./ContactThanks">
+        <button href="./" type="submit" className="btn btn-info mt-10">
+          SUBMIT
+        </button>
+      </a>
     </div>
   );
-}
+};
 
 export default Contact;
