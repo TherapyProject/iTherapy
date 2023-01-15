@@ -15,10 +15,14 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
-
+function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
+  }
+  
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
+
 
   const signInWithFacebook = () => {
     const provider = new FacebookAuthProvider();
@@ -37,8 +41,8 @@ export function AuthProvider({ children }) {
   };
 
   const value = useMemo(
-    () => ({ currentUser, signup, signInWithFacebook, signInWithGoogle }),
-    [currentUser, signup, signInWithFacebook, signInWithGoogle]
+    () => ({ currentUser, signup, login, signInWithFacebook, signInWithGoogle }),
+    [currentUser, signup, login ,  signInWithFacebook, signInWithGoogle]
   );
 
   useEffect(() => {
