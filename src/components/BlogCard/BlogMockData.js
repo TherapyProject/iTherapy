@@ -46,4 +46,24 @@ export const Blogs = [
     authTitle: 'psychologist',
     minsRead: '5',
   },
+
+  {
+    title: 'Bringing Live Concerts To Kurdistan',
+    img: 'https://c0.wallpaperflare.com/preview/600/388/1006/group-of-people-enjoying-concerts.jpg',
+    authImg:
+      'https://i.scdn.co/image/ab6761610000e5ebf6cfa22c003ac97bc68b8644',
+    authName: 'JXDN',
+    authTitle: 'artist',
+    minsRead: '10',
+  },
+
+  {
+    title: 'Why Kurdish Tweets Are So Cringe',
+    img: 'https://techozu.com/wp-content/uploads/2022/05/Twitter.jpg',
+    authImg:
+      'https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_400x400.jpg',
+    authName: 'Elon Musk',
+    authTitle: 'twitter CEO',
+    minsRead: '5',
+  },
 ];
