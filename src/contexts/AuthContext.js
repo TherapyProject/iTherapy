@@ -35,10 +35,10 @@ export function AuthProvider({ children }) {
     return auth.signOut();
   }
 
-  const signInWithFacebook = () => {
+  const signInWithFacebook = async () => {
     const provider = new FacebookAuthProvider();
     const authFB = getAuth();
-    signInWithPopup(authFB, provider);
+    await signInWithPopup(authFB, provider);
   };
 
   const signInWithGoogle = async () => {
