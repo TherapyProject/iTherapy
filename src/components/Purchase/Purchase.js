@@ -31,9 +31,12 @@ function Purchase() {
               client referrals and billing details!
             </p>
             <div className="card-actions justify-center">
-              <button type="button" className="font-['Poppins']  btn btn-info">
+              <a href='./learnmore'>
+                 <button type="button" className="font-['Poppins']  btn btn-info">
                 LEARN MORE
               </button>
+              </a>
+             
             </div>
           </div>
         </div>
