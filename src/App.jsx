@@ -24,15 +24,17 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/blogs" element={<BlogsPage />} />
-            <Route path="/about" element={<PrivateRoute />}>
-              <Route path="/about" element={<About />} />
-            </Route>
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/buyticket" element={<BuyTicket />} />
-            <Route path="/book" element={<BookAppointment />} />
+            <Route path="/team" element={<Team />} />*{' '}
+            <Route path="/buyticket" element={<PrivateRoute />}>
+              <Route path="/buyticket" element={<BuyTicket />} />
+            </Route>
+            <Route path="/book" element={<PrivateRoute />}>
+              <Route path="/book" element={<BookAppointment />} />
+            </Route>
           </Routes>
         </BrowserRouter>
         <Footer />

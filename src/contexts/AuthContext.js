@@ -21,16 +21,14 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
-
-  function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
-  }
+  const [loading, setLoading] = useState(true);
 
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
-  function isAuth() {
-    return currentUser;
+
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
   }
 
   function logout() {
@@ -43,11 +41,20 @@ export function AuthProvider({ children }) {
     signInWithPopup(authFB, provider);
   };
 
-  const signInWithGoogle = () => {
+  const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const authG = getAuth();
-    signInWithPopup(authG, provider);
+    await signInWithPopup(authG, provider);
   };
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+
+    return unsubscribe;
+  }, []);
 
   const value = useMemo(
     () => ({
@@ -56,29 +63,14 @@ export function AuthProvider({ children }) {
       login,
       signInWithFacebook,
       signInWithGoogle,
-      isAuth,
       logout,
-      test,
     }),
-    [
-      currentUser,
-      signup,
-      login,
-      signInWithFacebook,
-      signInWithGoogle,
-      isAuth,
-      logout,
-      test,
-    ]
+    [currentUser, signup, login, signInWithFacebook, signInWithGoogle, logout]
   );
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-    });
-
-    return unsubscribe;
-  }, []);
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }
