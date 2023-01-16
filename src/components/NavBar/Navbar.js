@@ -6,11 +6,7 @@ function Navbar() {
   const { currentUser, logout } = useAuth();
 
   const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.log(error);
-    }
+    await logout();
   };
 
   return (
