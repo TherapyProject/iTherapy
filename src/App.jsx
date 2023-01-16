@@ -12,6 +12,7 @@ import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
+import BuyTicket from './pages/buyTicket/BuyTicket';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/buyticket" element={<BuyTicket />} />
             <Route path="/book" element={<BookAppointment />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
