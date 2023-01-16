@@ -7,8 +7,8 @@ function PurchaseCard({ title, price }) {
         <div className="card-actions justify-center">
           <a href='./BuyTicket'>
             <button  type="button" className="btn btn-info">
-            PURCHASE
-          </button>
+              PURCHASE
+            </button>
           </a>
           
         </div>

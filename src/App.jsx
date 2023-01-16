@@ -6,14 +6,14 @@ import { AuthProvider } from './contexts/AuthContext';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import BookAppointment from './pages/Book/BookAppointment';
+import BuyTicket from './pages/buyTicket/BuyTicket';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
 import BuyTicket from './pages/buyTicket/BuyTicket';
-import TherapistCreate from './pages/therapistCreate/TherapistCreate';
-
+import LearnMore from './pages/Learn-More-Page/LearnMore';
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/buyticket" element={<BuyTicket />} />
             <Route path="/book" element={<BookAppointment />} />
-            <Route path="/therapistcreate" element={<TherapistCreate />} />
+            <Route path="/learnmore" element={<LearnMore />} />
           </Routes>
         </BrowserRouter>
         <Footer />

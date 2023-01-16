@@ -15,9 +15,9 @@ function Login() {
 
   const navigate = useNavigate();
 
-   async function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-   
+
     try {
       setError('');
       await login(emailRef.current.value, passwordRef.current.value);
@@ -30,7 +30,7 @@ function Login() {
       return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
     }
   }
-  
+
   return (
     <section className="bg-stone-50 px-12 py-10  dark:bg-gray-900 grid md:grid-cols-2  w-screen  items-center md:space-x-10">
       <div className=" bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 lg:ml-36 dark:bg-gray-800 dark:border-gray-700">
@@ -53,7 +53,11 @@ function Login() {
               </span>
             </Alert>
           )}
-          <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
+          <form
+            className="space-y-4 md:space-y-6"
+            action="#"
+            onSubmit={handleSubmit}
+          >
             <div>
               <label
                 htmlFor="email"
@@ -91,7 +95,6 @@ function Login() {
             <button
               type="submit"
               className="w-full text-white bg-blue-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              
             >
               Login
             </button>
@@ -106,7 +109,7 @@ function Login() {
 
             <div className="flex flex-col justify-center items-center">
               <button
-               onClick={signInWithFacebook}
+                onClick={signInWithFacebook}
                 type="button"
                 className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
               >
