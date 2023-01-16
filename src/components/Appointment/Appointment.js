@@ -15,7 +15,7 @@ function Appointment() {
       </div>
 
       <div className="sm:pl-5  -my-4">
-        <AvatarGroup size="lg"  />
+        <AvatarGroup size="lg" />
       </div>
 
       <div className=" w-full sm:pr-10 md:pr-20 xl:pr-56">

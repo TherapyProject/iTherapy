@@ -10,6 +10,7 @@ import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
+import LearnMore from './pages/Learn-More-Page/LearnMore';
 import Login from './pages/Login/Login';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
@@ -28,13 +29,14 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/team" element={<Team />} />*{' '}
+            <Route path="/team" element={<Team />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
               <Route path="/buyticket" element={<BuyTicket />} />
             </Route>
             <Route path="/book" element={<PrivateRoute />}>
               <Route path="/book" element={<BookAppointment />} />
             </Route>
+            <Route path="/learnmore" element={<LearnMore />} />
           </Routes>
         </BrowserRouter>
         <Footer />
