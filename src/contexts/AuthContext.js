@@ -4,7 +4,13 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from 'firebase/auth';
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
 import { auth } from '../backend/firebase';
 
 const AuthContext = createContext();
@@ -23,7 +29,6 @@ export function AuthProvider({ children }) {
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
-
 
   const signInWithFacebook = () => {
     const provider = new FacebookAuthProvider();

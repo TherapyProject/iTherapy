@@ -30,8 +30,6 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/buyticket" element={<BuyTicket />} />
             <Route path="/book" element={<BookAppointment />} />
-            
-
           </Routes>
         </BrowserRouter>
         <Footer />
