@@ -2,14 +2,14 @@ import {
   FacebookAuthProvider,
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup
+  signInWithPopup,
 } from 'firebase/auth';
 import React, {
   createContext,
   useContext,
   useEffect,
   useMemo,
-  useState
+  useState,
 } from 'react';
 import { auth } from '../backend/firebase';
 
@@ -21,43 +21,56 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
-
-  function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
-  }
+  const [loading, setLoading] = useState(true);
 
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
-  const signInWithFacebook = () => {
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
+  }
+
+  function logout() {
+    return auth.signOut();
+  }
+
+  const signInWithFacebook = async () => {
     const provider = new FacebookAuthProvider();
     const authFB = getAuth();
-    signInWithPopup(authFB, provider).then((result) => {
-      setCurrentUser(result.user);
-    });
+    await signInWithPopup(authFB, provider);
   };
 
-  const signInWithGoogle = () => {
+  const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const authG = getAuth();
-    signInWithPopup(authG, provider).then((result) => {
-      setCurrentUser(result.user);
-    });
+    await signInWithPopup(authG, provider);
   };
-
-  const value = useMemo(
-    () => ({ currentUser, signup, login, signInWithFacebook, signInWithGoogle }),
-    [currentUser, signup, login ,  signInWithFacebook, signInWithGoogle]
-  );
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
+      setLoading(false);
     });
 
     return unsubscribe;
   }, []);
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  const value = useMemo(
+    () => ({
+      currentUser,
+      signup,
+      login,
+      signInWithFacebook,
+      signInWithGoogle,
+      logout,
+    }),
+    [currentUser, signup, login, signInWithFacebook, signInWithGoogle, logout]
+  );
+
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }
