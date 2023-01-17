@@ -1,5 +1,6 @@
 import { addDoc, collection } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { db } from '../../backend/firebase';
 import Image from '../../images/Image.png';
 
@@ -8,9 +9,10 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [details, setDetails] = useState('');
   const userCollectionRef = collection(db, 'contactdata');
+  const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    addDoc(userCollectionRef, {
+  const handleSubmit = async () => {
+    await addDoc(userCollectionRef, {
       name,
       email,
       details,
@@ -19,6 +21,7 @@ const Contact = () => {
     setName('');
     setEmail('');
     setDetails('');
+    return navigate('/ContactThanks');
   };
 
   return (
@@ -200,16 +203,15 @@ const Contact = () => {
           onChange={(e) => setDetails(e.target.value)}
         />
       </div>
-      <a href="./ContactThanks">
-        <button
-          onClick={handleSubmit}
-          href="./"
-          type="submit"
-          className="btn btn-info mt-10"
-        >
-          SUBMIT
-        </button>
-      </a>
+      {/* <a href="./ContactThanks"> */}
+      <button
+        onClick={handleSubmit}
+        type="submit"
+        className="btn btn-info mt-10"
+      >
+        SUBMIT
+      </button>
+      {/* </a> */}
     </div>
   );
 };
