@@ -1,8 +1,10 @@
 import React from 'react'
+import Slider from '../../components/SliderSection/Slider'
+import SliderLayout from '../../components/SliderSection/SliderLayout'
 
 const SingleBlogPage = () => {
   return (
-    <div className='flex flex-col justify-start bg-slate-100 w-full items-start py-10 px-5  sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-96 ' >
+    <div className='flex overflow-hidden flex-col justify-start bg-slate-100 w-full items-start py-10 px-5  sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-96 ' >
       <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white my-10">
                       <img className="mr-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos"/>
                       <div>
@@ -69,7 +71,12 @@ quasi aliquam eligendi, placeat qui corporis!`}</p>
           </div>
         </div>
       </div>
-                  
+
+      <SliderLayout title="Related Blogs">
+        <Slider />
+      </SliderLayout>
+
+
     </div>
   )
 }

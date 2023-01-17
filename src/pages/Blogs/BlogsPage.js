@@ -1,14 +1,26 @@
-import React from 'react';
-
+import BlogCard from "../../components/BlogCard/BlogCard";
+import { Blogs } from "../../components/BlogCard/BlogMockData";
 
 function BlogsPage() {
+  
   return (
-    <div>
-      <h2 className="font-['Poppins'] text-lg sm:text-xl lg:text-2xl text-gray-700 font-bold mx-10 mt-5 ">
-        Blogs:
-      </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-5 my-5 " />
-    </div>
+    <div className="w-full h-full p-5 ">
+      <div className="flex justify-start w-full px-5 my-5">
+        <h1 className="text-lg font-bold ">Blogs</h1>
+      </div>
+      <div className=" w-full h-full grid grid-cols-2 md:grid-cols-3 gap-5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      sm:gap-5 md:gap-10 lg:gap-10">
+        {Blogs.map((blog) => (
+          <BlogCard
+            title={blog.title}
+            img={blog.img}
+            authImg={blog.authImg}
+            authName={blog.authName}
+            authTitle={blog.authTitle}
+            minsRead={blog.minsRead}
+          />
+        ))}
+      </div>
+      </div>
   );
 }
 

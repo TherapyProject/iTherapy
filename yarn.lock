@@ -4632,6 +4632,18 @@
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.272.tgz"
   "version" "1.4.272"
 
+"embla-carousel-react@^7.0.5":
+  "integrity" "sha512-qhw980gKj7G+O5d3WSwj0TyhcbpGP3DqJPiAatt1t3wEEcZqn7csaIfLh4e1N/0kna9sZfZZRzz+//NSrUodSg=="
+  "resolved" "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-7.0.5.tgz"
+  "version" "7.0.5"
+  dependencies:
+    "embla-carousel" "7.0.5"
+
+"embla-carousel@7.0.5":
+  "integrity" "sha512-loRcu0La0F7bhEMwbvgpi14iaaIEdwacH1xoplnaYfwN4KMgECkiuLgu4lx+v6MYd6lSpg/bw7ZxEuLUwYjavg=="
+  "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.5.tgz"
+  "version" "7.0.5"
+
 "emittery@^0.10.2":
   "integrity" "sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw=="
   "resolved" "https://registry.npmjs.org/emittery/-/emittery-0.10.2.tgz"
@@ -7328,16 +7340,6 @@
   dependencies:
     "brace-expansion" "^2.0.1"
 
-<<<<<<< HEAD
-"minimatch@3.0.4":
-  "integrity" "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA=="
-  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz"
-  "version" "3.0.4"
-  dependencies:
-    "brace-expansion" "^1.1.7"
-
-=======
->>>>>>> 52f85e9d63dd8718728c96157ae8cea9516e5794
 "minimist@^1.2.0", "minimist@^1.2.6", "minimist@1.2.6":
   "integrity" "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
@@ -8743,7 +8745,7 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^16.9.0 || ^17.0.0 || ^18.0.0", "react@^18", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>=16.8", "react@>=16.8.0":
+"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.1 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^16.9.0 || ^17.0.0 || ^18.0.0", "react@^18", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>=16.8", "react@>=16.8.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -8787,19 +8789,11 @@
     "picomatch" "^2.2.1"
 
 "recursive-readdir@^2.2.2":
-<<<<<<< HEAD
-  "integrity" "sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg=="
-  "resolved" "https://registry.npmjs.org/recursive-readdir/-/recursive-readdir-2.2.2.tgz"
-  "version" "2.2.2"
-  dependencies:
-    "minimatch" "3.0.4"
-=======
   "integrity" "sha512-8HrF5ZsXk5FAH9dgsx3BlUer73nIhuj+9OrQwEbLTPOBzGkL1lsFCR01am+v+0m2Cmbs1nP12hLDl5FA7EszKA=="
   "resolved" "https://registry.npmjs.org/recursive-readdir/-/recursive-readdir-2.2.3.tgz"
   "version" "2.2.3"
   dependencies:
     "minimatch" "^3.0.5"
->>>>>>> 52f85e9d63dd8718728c96157ae8cea9516e5794
 
 "redent@^3.0.0":
   "integrity" "sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg=="
