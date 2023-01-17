@@ -9,6 +9,7 @@ import BlogsPage from './pages/Blogs/BlogsPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
 import Contact from './pages/Contact/Contact';
+import ContactThanks from './pages/Contact/ContactThanks';
 import Home from './pages/Home/Home';
 import LearnMore from './pages/Learn-More-Page/LearnMore';
 import Login from './pages/Login/Login';
@@ -37,6 +38,7 @@ function App() {
               <Route path="/book" element={<BookAppointment />} />
             </Route>
             <Route path="/learnmore" element={<LearnMore />} />
+            <Route path="/contactthanks" element={<ContactThanks />} />
           </Routes>
         </BrowserRouter>
         <Footer />
