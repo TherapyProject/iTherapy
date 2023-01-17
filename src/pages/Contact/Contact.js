@@ -1,3 +1,4 @@
+import { addDoc, collection } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { db } from '../../backend/firebase';
 import Image from '../../images/Image.png';
@@ -6,24 +7,14 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [details, setDetails] = useState('');
+  const userCollectionRef = collection(db, 'contactdata');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    db.collection('contacts')
-      .add({
-        name,
-        email,
-        details,
-      })
-      .then(() => {
-        // eslint-disable-next-line
-        alert('Message has been submitted');
-      })
-      .catch((error) => {
-        // eslint-disable-next-line
-        alert(error.message);
-      });
+  const handleSubmit = () => {
+    addDoc(userCollectionRef, {
+      name,
+      email,
+      details,
+    });
 
     setName('');
     setEmail('');
@@ -173,10 +164,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div
-        className="form-control w-full max-w-xs md:-mt-80"
-        onSubmit={handleSubmit}
-      >
+      <div className="form-control w-full max-w-xs md:-mt-80">
         <span className="label-text text-xl font-semibold mb-3">
           Full Name:
         </span>
@@ -213,7 +201,12 @@ const Contact = () => {
         />
       </div>
       <a href="./ContactThanks">
-        <button href="./" type="submit" className="btn btn-info mt-10">
+        <button
+          onClick={handleSubmit}
+          href="./"
+          type="submit"
+          className="btn btn-info mt-10"
+        >
           SUBMIT
         </button>
       </a>
