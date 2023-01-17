@@ -203,7 +203,6 @@ const Contact = () => {
           onChange={(e) => setDetails(e.target.value)}
         />
       </div>
-      {/* <a href="./ContactThanks"> */}
       <button
         onClick={handleSubmit}
         type="submit"
@@ -211,7 +210,6 @@ const Contact = () => {
       >
         SUBMIT
       </button>
-      {/* </a> */}
     </div>
   );
 };
