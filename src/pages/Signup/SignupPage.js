@@ -9,7 +9,7 @@ function SignupPage() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup, signInWithFacebook, signInWithGoogle } = useAuth();
+  const { signUp, signInWithFacebook, signInWithGoogle } = useAuth();
   const [error, setError] = useState('');
   const [signupSuccess, setSignupSuccess] = useState(false);
 
@@ -22,7 +22,7 @@ function SignupPage() {
     }
     try {
       setError('');
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await signUp(emailRef.current.value, passwordRef.current.value);
       setSignupSuccess(true);
       const timer = setTimeout(() => {
         return navigate('/login');
