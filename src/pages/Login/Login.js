@@ -8,7 +8,7 @@ function Login() {
   const required = true;
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login, signInWithFacebook, signInWithGoogle } = useAuth();
+  const { logIn, signInWithFacebook, signInWithGoogle } = useAuth();
   const [error, setError] = useState('');
   const [loginSuccess, setLoginSuccess] = useState(false);
 
@@ -19,7 +19,7 @@ function Login() {
 
     try {
       setError('');
-      await login(emailRef.current.value, passwordRef.current.value);
+      await logIn(emailRef.current.value, passwordRef.current.value);
       setLoginSuccess(true);
       const timer = setTimeout(() => {
         return navigate('/');
