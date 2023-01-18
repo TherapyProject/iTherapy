@@ -3,10 +3,10 @@ import { useAuth } from '../../contexts/AuthContext';
 import Logo from '../../images/logo.png';
 
 function Navbar() {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logOut } = useAuth();
 
-  const handleLogout = async () => {
-    await logout();
+  const handleLogOut = async () => {
+    await logOut();
   };
 
   return (
@@ -72,7 +72,7 @@ function Navbar() {
                 </a>
               ) : (
                 <button
-                  onClick={handleLogout}
+                  onClick={handleLogOut}
                   type="button"
                   className=" font-['Poppins'] font-medium text-base text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300  rounded-md px-6 py-1.5 mt-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 >
