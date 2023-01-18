@@ -129,7 +129,7 @@ function SignupPage() {
                   I accept the{' '}
                   <a
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    href="w"
+                    href="/terms"
                   >
                     Terms and Conditions
                   </a>
@@ -203,7 +203,7 @@ function SignupPage() {
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               Already have an account?{' '}
               <a
-                href="w"
+                href="/login"
                 className="font-medium text-primary-600 hover:underline dark:text-primary-500"
               >
                 Login here

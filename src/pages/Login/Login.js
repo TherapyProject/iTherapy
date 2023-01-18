@@ -5,11 +5,10 @@ import { useAuth } from '../../contexts/AuthContext';
 import Poster from '../Signup/Images/online-meetings.png';
 
 function Login() {
-
   const required = true;
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login , signInWithFacebook , signInWithGoogle } = useAuth();
+  const { login, signInWithFacebook, signInWithGoogle } = useAuth();
   const [error, setError] = useState('');
   const [loginSuccess, setLoginSuccess] = useState(false);
 
@@ -31,14 +30,42 @@ function Login() {
     }
   }
 
+  const handleGoogleLogin = async () => {
+    try {
+      setError('');
+      await signInWithGoogle();
+      setLoginSuccess(true);
+      const timer = setTimeout(() => {
+        return navigate('/');
+      }, 3000);
+      return () => clearTimeout(timer);
+    } catch (firebaseError) {
+      return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
+    }
+  };
+
+  const handleFacebookLogin = async () => {
+    try {
+      setError('');
+      await signInWithFacebook();
+      setLoginSuccess(true);
+      const timer = setTimeout(() => {
+        return navigate('/');
+      }, 3000);
+      return () => clearTimeout(timer);
+    } catch (firebaseError) {
+      return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
+    }
+  };
+
   return (
     <section className="bg-stone-50 px-12 py-10  dark:bg-gray-900 grid md:grid-cols-2  w-screen  items-center md:space-x-10">
       <div className=" bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 lg:ml-36 dark:bg-gray-800 dark:border-gray-700">
         {loginSuccess && (
           <Alert color="success">
             <span>
-              <span className="font-medium">Alert!</span>
-              you successfully logged in
+              <span className="font-medium">Alert!</span> you successfully
+              logged in
             </span>
           </Alert>
         )}
@@ -109,7 +136,7 @@ function Login() {
 
             <div className="flex flex-col justify-center items-center">
               <button
-                onClick={signInWithFacebook}
+                onClick={handleFacebookLogin}
                 type="button"
                 className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
               >
@@ -132,7 +159,7 @@ function Login() {
               </button>
 
               <button
-                onClick={signInWithGoogle}
+                onClick={handleGoogleLogin}
                 type="button"
                 className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
               >
