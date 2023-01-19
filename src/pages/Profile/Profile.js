@@ -21,7 +21,7 @@ import { auth, db, storage } from '../../backend/firebase';
 import { useAuth } from '../../contexts/AuthContext';
 
 const Profile = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, changeCurrentUser } = useAuth();
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -65,6 +65,8 @@ const Profile = () => {
       ...prevProfile,
       photoURL: downloadURL,
     }));
+    currentUser.photoURL = downloadURL;
+    changeCurrentUser(currentUser);
 
     updateProfile(auth.currentUser, {
       photoURL: downloadURL,
@@ -97,7 +99,7 @@ const Profile = () => {
     try {
       await setDoc(doc(db, 'users', currentUser.uid), {
         uid: currentUser.uid,
-        displayName: currentUser.displayName,
+        displayName: profile.displayName,
         email: currentUser.email,
         gender: profile.gender,
         education: profile.education,
@@ -126,6 +128,9 @@ const Profile = () => {
         setErrorMessage(error.message);
       }
     );
+
+    currentUser.displayName = profile.displayName;
+    changeCurrentUser(currentUser);
 
     createProfile();
   };

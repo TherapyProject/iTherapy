@@ -1,14 +1,10 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import Logo from '../../images/logo.png';
-import AvatarProfile from '../AvatarProfile/AvatarProfile';
+import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 function Navbar() {
-  // const { currentUser, logout } = useAuth();
   const { currentUser } = useAuth();
-  // const handleLogout = async () => {
-  //   await logout();
-  // };
 
   return (
     <div className="Navbar">
@@ -72,14 +68,7 @@ function Navbar() {
                   </button>
                 </a>
               ) : (
-                <AvatarProfile />
-                // <button
-                //   onClick={handleLogout}
-                //   type="button"
-                //   className=" font-['Poppins'] font-medium text-base text-black bg-cyan-500 hover:bg-cyan-700 focus:ring-blue-300  rounded-md px-6 py-1.5 mt-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                // >
-                //   Log out
-                // </button>
+                <DropDownMenu />
               )}
             </ul>
           </div>
