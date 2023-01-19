@@ -25,7 +25,7 @@ function SignupPage() {
       await signUp(emailRef.current.value, passwordRef.current.value);
       setSignupSuccess(true);
       const timer = setTimeout(() => {
-        return navigate('/login');
+        return navigate('/profile');
       }, 3000);
       return () => clearTimeout(timer);
     } catch (firebaseError) {
@@ -40,7 +40,7 @@ function SignupPage() {
           <Alert color="success">
             <span>
               <span className="font-medium">Alert!</span> You successfully
-              signed up, please login in
+              signed up
             </span>
           </Alert>
         )}

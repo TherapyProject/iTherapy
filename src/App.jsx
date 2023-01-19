@@ -20,9 +20,9 @@ import TherapistCreate from './pages/therapistCreate/TherapistCreate';
 function App() {
   return (
     <AuthProvider>
-      <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <Navbar />
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -45,9 +45,9 @@ function App() {
               <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
-        </BrowserRouter>
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
