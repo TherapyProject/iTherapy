@@ -22,6 +22,10 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
+  function changeCurrentUser(newUser) {
+    setCurrentUser({ ...newUser });
+  }
+
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
@@ -61,8 +65,17 @@ export function AuthProvider({ children }) {
       logOut,
       signInWithFacebook,
       signInWithGoogle,
+      changeCurrentUser,
     }),
-    [currentUser, signUp, logIn, logOut, signInWithFacebook, signInWithGoogle]
+    [
+      currentUser,
+      signUp,
+      logIn,
+      logOut,
+      signInWithFacebook,
+      signInWithGoogle,
+      changeCurrentUser,
+    ]
   );
 
   return (
