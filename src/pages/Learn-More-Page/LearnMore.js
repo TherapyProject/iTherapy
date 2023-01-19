@@ -54,9 +54,12 @@ function LearnMore() {
           the US
         </li>
       </ul>
-      <button type="submit" className="btn btn-info mt-10  ">
+      <a href='/therapistcreate'>
+        <button type="submit" className="btn btn-info mt-10  ">
         GET STARTED
       </button>
+      </a>
+      
     </div>
   );
 }
