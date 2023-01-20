@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import {
   Label,
   TextInput,
@@ -7,9 +7,24 @@ import {
 } from 'flowbite-react/lib/esm/components';
 
 function TherapistCreate() {
+  const [UserName, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
+  const [licenseNumber, setLicenseNumber] = useState(0);
+  const [password, setPassword] = useState(0);
+  const [repeatPassword, setRepeatPassword] = useState(0);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // eslint-disable-next-line no-console
+    console.log(UserName, email, city, licenseNumber, password, repeatPassword);
+  };
   return (
     <div>
-      <form className=" m-10 mb-24 sm:ml-32  flex flex-col w-72 gap-4  ">
+      <form
+        onSubmit={handleSubmit}
+        className=" m-10 mb-24 sm:ml-32  flex flex-col w-72 gap-4  "
+      >
         <h1 className="font-[Poppins] text-2xl whitespace-nowrap">
           CREATE AN ACCOUNT
         </h1>
@@ -17,19 +32,37 @@ function TherapistCreate() {
           <div className="mb-2 text-neutral-500">
             <Label htmlFor="UserName" value="User Name" />
           </div>
-          <TextInput id="UserName" type="text" required="true" shadow="true" />
+          <TextInput
+            id="UserName"
+            type="text"
+            required="true"
+            shadow="true"
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
         <div>
           <div className="mb-2 ">
             <Label htmlFor="email2" value="Email" />
           </div>
-          <TextInput id="email2" type="email" required="true" shadow="true" />
+          <TextInput
+            id="email2"
+            type="email"
+            required="true"
+            shadow="true"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div>
           <div className="mb-2 ">
             <Label htmlFor="City" value="City" />
           </div>
-          <TextInput id="City" type="text" required="true" shadow="true" />
+          <TextInput
+            id="City"
+            type="text"
+            required="true"
+            shadow="true"
+            onChange={(e) => setCity(e.target.value)}
+          />
         </div>
         <div>
           <div className="mb-2 ">
@@ -40,6 +73,7 @@ function TherapistCreate() {
             type="text"
             required="true"
             shadow="true"
+            onChange={(e) => setLicenseNumber(e.target.value)}
           />
         </div>
         <div>
@@ -51,6 +85,7 @@ function TherapistCreate() {
             type="password"
             required="true"
             shadow="true"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div>
@@ -62,6 +97,7 @@ function TherapistCreate() {
             type="password"
             required="true"
             shadow="true"
+            onChange={(e) => setRepeatPassword(e.target.value)}
           />
         </div>
         <div className="flex items-center gap-2">
