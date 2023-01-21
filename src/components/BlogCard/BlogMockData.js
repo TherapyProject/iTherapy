@@ -1,17 +1,16 @@
 export const Blogs = [
   {
-    id:0,
+    id: 0,
     title: 'Bringing Live Concerts To Kurdistan',
     img: 'https://c0.wallpaperflare.com/preview/600/388/1006/group-of-people-enjoying-concerts.jpg',
-    authImg:
-      'https://i.scdn.co/image/ab6761610000e5ebf6cfa22c003ac97bc68b8644',
+    authImg: 'https://i.scdn.co/image/ab6761610000e5ebf6cfa22c003ac97bc68b8644',
     authName: 'JXDN',
     authTitle: 'artist',
     minsRead: '10',
   },
 
   {
-    id:1,
+    id: 1,
     title: 'Why Kurdish Tweets Are So Cringe',
     img: 'https://techozu.com/wp-content/uploads/2022/05/Twitter.jpg',
     authImg:
@@ -22,7 +21,7 @@ export const Blogs = [
   },
 
   {
-    id:2,
+    id: 2,
     title: 'The Masculinity is in Danger',
     img: 'https://static.wixstatic.com/media/96319b_490baf3538e445339eacc92e3ed5b644~mv2.jpg/v1/fill/w_560,h_312,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/96319b_490baf3538e445339eacc92e3ed5b644~mv2.jpg',
     authImg:
@@ -32,7 +31,7 @@ export const Blogs = [
     minsRead: '25',
   },
   {
-    id:3,
+    id: 3,
     title: 'a Guide On How To Enjoy Snow and Date Syrup in winter',
     img: 'https://assets.marthastewart.com/styles/wmax-750/d41/pouring-maple-syrup-on-snow-6505-26a98986/pouring-maple-syrup-on-snow-6505-26a98986_horiz.jpg?itok=rgVrCyMt',
     authImg: 'https://raprsi.com/content/upload/1/nawdaran/mam-vandam.jpg',
@@ -42,7 +41,7 @@ export const Blogs = [
   },
 
   {
-    id:4,
+    id: 4,
     title: 'Discovering the Beauty of Northern Iraq',
     img: 'https://images.pexels.com/photos/2708981/pexels-photo-2708981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     authImg:
@@ -51,5 +50,4 @@ export const Blogs = [
     authTitle: 'psychologist',
     minsRead: '5',
   },
-
 ];

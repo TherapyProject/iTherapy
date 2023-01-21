@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/NavBar/Navbar';
 import PrivateRoute from './components/PrivateRoute/privateRoute';
+import Scroll from './components/Scroll/Scroll';
 import { AuthProvider } from './contexts/AuthContext';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
@@ -24,14 +25,13 @@ function App() {
       <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <Navbar />
         <BrowserRouter>
+          <Scroll />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-           
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:blogId" element={<SingleBlogPage />} />
-            <Route path="/blogs/newblog" element={<NewBlog />}/>
-            
+            <Route path="/blogs/newblog" element={<NewBlog />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />

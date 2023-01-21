@@ -4,39 +4,55 @@ import { Blogs } from '../../components/BlogCard/BlogMockData';
 import Slider from '../../components/SliderSection/Slider';
 import SliderLayout from '../../components/SliderSection/SliderLayout';
 
-
 const SingleBlogPage = () => {
-
-  const {blogId} = useParams();
+  const { blogId } = useParams();
   const [blog, setBlog] = useState({});
-  
 
-  
   useEffect(() => {
-    
-     
     setBlog(Blogs[blogId]);
-  }, []);
+  }, [blogId]);
   return (
-    <div className='flex overflow-hidden flex-col justify-start bg-slate-100 w-full items-start py-10 px-5  sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-96 ' >
+    <div className="flex overflow-hidden flex-col justify-start bg-slate-100 w-full items-start py-10 px-5  sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-96 ">
       <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white my-10">
-                      <img className="mr-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center" src={blog.authImg} alt="Jese Leos"/>
-                      <div>
-                          <a href="link" rel="author" className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{blog.authName}</a>
-                          <p className="text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">{blog.authTitle}</p>
-                          <p className="text-base sm:text-lg font-light text-gray-500 dark:text-gray-400"><time  dateTime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
-                      </div>
-                  </div>
-                  <div className="  rounded-md  ">
-                    <img className=' object-center object-cover rounded-lg max-h-[400px]' src={blog.img} alt="blog post"/>
-                  </div>
-                  
-                  <div className="flex flex-col justify-start items-start w-full">
-                    <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-10">{blog.title} </h1>
-                  </div>
-                  
-                  <div className="flex flex-col justify-center items-start w-full mt-5 md:mt-10">
-                       <p className=' text-left md:text-lg md:text-justify'>{`Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        <img
+          className="mr-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center"
+          src={blog.authImg}
+          alt="Jese Leos"
+        />
+        <div>
+          <a
+            href="link"
+            rel="author"
+            className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white"
+          >
+            {blog.authName}
+          </a>
+          <p className="text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">
+            {blog.authTitle}
+          </p>
+          <p className="text-base sm:text-lg font-light text-gray-500 dark:text-gray-400">
+            <time dateTime="2022-02-08" title="February 8th, 2022">
+              Feb. 8, 2022
+            </time>
+          </p>
+        </div>
+      </div>
+      <div className="  rounded-md w-full bg-red-500 ">
+        <img
+          className=" object-center object-cover rounded-lg w-full h-52 sm:h-64 md:h-72 lg:h-80 xl:h-96  "
+          src={blog.img}
+          alt="blog post"
+        />
+      </div>
+
+      <div className="flex flex-col justify-start items-start w-full">
+        <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-10">
+          {blog.title}{' '}
+        </h1>
+      </div>
+
+      <div className="flex flex-col justify-center items-start w-full mt-5 md:mt-10">
+        <p className=" text-left md:text-lg md:text-justify">{`Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
 numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
 optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
@@ -57,11 +73,11 @@ suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium
 modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam 
 totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam 
 quasi aliquam eligendi, placeat qui corporis!`}</p>
-                    </div>
+      </div>
 
-                      <div/>
+      <div />
 
-        <div className="flex-col items-start justify-start mt-10 ">
+      <div className="flex-col items-start justify-start mt-10 ">
         <h5 className="text-md lg:text-3xl font-bold ">
           Subscribe to our newsletter
         </h5>
@@ -89,10 +105,8 @@ quasi aliquam eligendi, placeat qui corporis!`}</p>
       <SliderLayout title="Related Blogs">
         <Slider />
       </SliderLayout>
-
-
     </div>
-  )
-}
+  );
+};
 
-export default SingleBlogPage
+export default SingleBlogPage;
