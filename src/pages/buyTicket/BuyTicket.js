@@ -22,11 +22,13 @@ function BuyTicket() {
           <CreditCard pic={Card2} />
           <CreditCard pic={Card3} />
         </div>
-        <div className='text-center'>
-          <p className='text-center font-[Poppins] text-sm sm:text-2xl py-10 px-10'>
+        <div className="text-center">
+          <p className="text-center font-[Poppins] text-sm sm:text-2xl py-10 px-10">
             Click confirm to use the selected card to purchase 5 tickets for 10$
           </p>
-          <button  type='submit' className="btn btn-info  " >CONFIRM PURCHASE</button>
+          <button type="submit" className="btn btn-info  ">
+            CONFIRM PURCHASE
+          </button>
         </div>
       </div>
     </div>
