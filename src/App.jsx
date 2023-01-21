@@ -21,9 +21,9 @@ import Team from './pages/Team/Team';
 function App() {
   return (
     <AuthProvider>
-      <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
-        <Navbar />
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+          <Navbar />
           <Scroll />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -46,9 +46,9 @@ function App() {
               <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
-        </BrowserRouter>
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
