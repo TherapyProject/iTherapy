@@ -76,7 +76,7 @@ function Navbar() {
             </ul>
           </div>
           <div className="md:hidden">
-            <Dropdown label="" inline>
+            <Dropdown label="Menu" inline>
               {currentUser ? (
                 <Dropdown.Header onClick={() => navigate('/profile')}>
                   <span className="block text-sm">
