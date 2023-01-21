@@ -1,10 +1,13 @@
+import { Dropdown } from 'flowbite-react/lib/esm/components';
 import React from 'react';
+import { useNavigate } from 'react-router';
 import { useAuth } from '../../contexts/AuthContext';
 import Logo from '../../images/logo.png';
 import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 function Navbar() {
-  const { currentUser } = useAuth();
+  const { currentUser, logOut } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="Navbar">
@@ -28,7 +31,7 @@ function Navbar() {
               <li>
                 <a
                   href="/home"
-                  className="font-['Poppins'] font-bold text-base	 mt-2 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-200 md:p-0 dark:text-white"
+                  className=" font-['Poppins'] font-medium text-base	 mt-2 block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-yellow-200  md:hover:bg-transparent md:border-0 md:hover:text-yellow-200  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   aria-current="page"
                 >
                   Home
@@ -71,6 +74,43 @@ function Navbar() {
                 <DropDownMenu />
               )}
             </ul>
+          </div>
+          <div className="md:hidden">
+            <Dropdown label="" inline>
+              {currentUser ? (
+                <Dropdown.Header onClick={() => navigate('/profile')}>
+                  <span className="block text-sm">
+                    <strong>{currentUser.displayName || 'User'}</strong>
+                  </span>
+                  <span className="block truncate text-sm font-medium">
+                    {currentUser?.email}
+                  </span>
+                </Dropdown.Header>
+              ) : (
+                ''
+              )}
+
+              <Dropdown.Item onClick={() => navigate('/home')}>
+                Home
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate('/blogs')}>
+                Blogs
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate('/about')}>
+                About
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate('/contact')}>
+                Contact Us
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              {currentUser ? (
+                <Dropdown.Item onClick={() => logOut()}>Sign out</Dropdown.Item>
+              ) : (
+                <Dropdown.Item onClick={() => navigate('/login')}>
+                  Log in
+                </Dropdown.Item>
+              )}
+            </Dropdown>
           </div>
         </div>
       </nav>
