@@ -6,6 +6,7 @@ import PrivateRoute from './components/PrivateRoute/privateRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
+import NewBlog from './pages/Blogs/NewBlog';
 import SingleBlogPage from './pages/Blogs/SingleBlogPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
@@ -26,10 +27,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+           
             <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blogs/:blogId" element={<SingleBlogPage />} />
+            <Route path="/blogs/newblog" element={<NewBlog />}/>
+            
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<SingleBlogPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />

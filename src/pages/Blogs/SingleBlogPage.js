@@ -1,24 +1,38 @@
-import React from 'react'
-import Slider from '../../components/SliderSection/Slider'
-import SliderLayout from '../../components/SliderSection/SliderLayout'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { Blogs } from '../../components/BlogCard/BlogMockData';
+import Slider from '../../components/SliderSection/Slider';
+import SliderLayout from '../../components/SliderSection/SliderLayout';
+
 
 const SingleBlogPage = () => {
+
+  const {blogId} = useParams();
+  const [blog, setBlog] = useState({});
+  
+
+  
+  useEffect(() => {
+    
+     
+    setBlog(Blogs[blogId]);
+  }, []);
   return (
     <div className='flex overflow-hidden flex-col justify-start bg-slate-100 w-full items-start py-10 px-5  sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-96 ' >
       <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white my-10">
-                      <img className="mr-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos"/>
+                      <img className="mr-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center" src={blog.authImg} alt="Jese Leos"/>
                       <div>
-                          <a href="link" rel="author" className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Hevar tofiq</a>
-                          <p className="text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">Graphic Designer</p>
+                          <a href="link" rel="author" className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{blog.authName}</a>
+                          <p className="text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">{blog.authTitle}</p>
                           <p className="text-base sm:text-lg font-light text-gray-500 dark:text-gray-400"><time  dateTime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
                       </div>
                   </div>
                   <div className="  rounded-md  ">
-                    <img className=' object-center object-cover rounded-lg max-h-[400px]' src="https://static.vecteezy.com/system/resources/previews/002/099/721/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg" alt="blog post"/>
+                    <img className=' object-center object-cover rounded-lg max-h-[400px]' src={blog.img} alt="blog post"/>
                   </div>
                   
                   <div className="flex flex-col justify-start items-start w-full">
-                    <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
+                    <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-10">{blog.title} </h1>
                   </div>
                   
                   <div className="flex flex-col justify-center items-start w-full mt-5 md:mt-10">
@@ -66,7 +80,7 @@ quasi aliquam eligendi, placeat qui corporis!`}</p>
               className=" btn btn-primary absolute sm:top--6 right-24 sm:right-8 md:right-0 rounded-l-none"
               type="submit"
             >
-              Enter
+              send
             </button>
           </div>
         </div>

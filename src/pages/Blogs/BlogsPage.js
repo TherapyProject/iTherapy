@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import { Blogs } from "../../components/BlogCard/BlogMockData";
 
@@ -10,7 +11,9 @@ function BlogsPage() {
       </div>
       <div className=" w-full h-full grid grid-cols-2 md:grid-cols-3 gap-5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      sm:gap-5 md:gap-10 lg:gap-10">
         {Blogs.map((blog) => (
-          <BlogCard
+          <Link key={blog.id}  to={`/blogs/${blog.id}`}>
+            <BlogCard
+            key={blog.id}
             title={blog.title}
             img={blog.img}
             authImg={blog.authImg}
@@ -18,6 +21,8 @@ function BlogsPage() {
             authTitle={blog.authTitle}
             minsRead={blog.minsRead}
           />
+          
+          </Link>
         ))}
       </div>
       </div>
