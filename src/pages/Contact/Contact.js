@@ -1,7 +1,32 @@
-import React from 'react';
+import { addDoc, collection } from 'firebase/firestore';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { db } from '../../backend/firebase';
 import Image from '../../images/Image.png';
 
-function Contact() {
+const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [details, setDetails] = useState('');
+  const userCollectionRef = collection(db, 'contactdata');
+  const navigate = useNavigate();
+  const [type, setType] = useState('');
+
+  const handleSubmit = async () => {
+    await addDoc(userCollectionRef, {
+      name,
+      email,
+      details,
+      type,
+    });
+
+    setName('');
+    setEmail('');
+    setDetails('');
+    setType('');
+    navigate('/ContactThanks');
+  };
+
   return (
     <div className="p-10">
       <div>
@@ -14,7 +39,7 @@ function Contact() {
       </div>
       <div>
         <h2 className="text-xl font-semibold text-center md:text-start mt-8 mb-10">
-          Type of contact
+          Type of contact: {type}
         </h2>
         <div className=" md:flex justify-between gap-8">
           <div className="flex flex-col text-xl gap-8 mb-8">
@@ -24,9 +49,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="question"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'question'}
+                  value="I have a question about the service."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -39,9 +68,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-2-radio"
+                  id="registered client"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'registered client '}
+                  value="I'm a registered client and I need support."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -54,10 +87,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  checked
-                  id="inline-checked-radio"
+                  id="interested counselor"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'interested counselor'}
+                  value="I'm a counselor interested in joining."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -70,9 +106,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="registered counselor"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'registered counselor'}
+                  value="I'm a registered counselor and I need support."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -85,9 +125,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="business"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'business'}
+                  value="I have a business-related inquiry."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -100,9 +144,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="organization"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'organization'}
+                  value="I'm interested in Healing Online for my organization."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -115,9 +163,13 @@ function Contact() {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="billing"
                   type="radio"
-                  value=""
+                  defaultChecked={type === 'billing'}
+                  value="I have a billing related question."
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -153,6 +205,8 @@ function Contact() {
           type="text"
           placeholder="Enter your full name here..."
           className="input input-bordered w-full max-w-xs"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="form-control w-full max-w-xs">
@@ -163,24 +217,31 @@ function Contact() {
           type="text"
           placeholder="Enter your email here..."
           className="input input-bordered w-full max-w-xs"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="form-control w-full max-w-xs">
         <span className="label-text text-xl font-semibold mb-3 mt-3">
           Details:
         </span>
-        <input
+        <textarea
           type="text"
           placeholder="Enter your details here..."
           className="input input-bordered w-full max-w-xs"
+          value={details}
+          onChange={(e) => setDetails(e.target.value)}
         />
       </div>
-
-      <button className="btn btn-info mt-10" type="button">
+      <button
+        onClick={handleSubmit}
+        type="submit"
+        className="btn btn-info mt-10"
+      >
         SUBMIT
       </button>
     </div>
   );
-}
+};
 
 export default Contact;

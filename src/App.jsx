@@ -11,6 +11,7 @@ import SingleBlogPage from './pages/Blogs/SingleBlogPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
 import Contact from './pages/Contact/Contact';
+import ContactThanks from './pages/Contact/ContactThanks';
 import Home from './pages/Home/Home';
 import LearnMore from './pages/Learn-More-Page/LearnMore';
 import Login from './pages/Login/Login';
@@ -36,7 +37,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/therapistcreate" element={<TherapistCreate />} />
+            <Route path="/ContactThanks" element={<ContactThanks />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
               <Route path="/buyticket" element={<PrivateRoute />}/>
               <Route path="/buyticket" element={<BuyTicket />} />
