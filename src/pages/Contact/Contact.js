@@ -10,18 +10,20 @@ const Contact = () => {
   const [details, setDetails] = useState('');
   const userCollectionRef = collection(db, 'contactdata');
   const navigate = useNavigate();
-  const [radio, setRadio] = useState('');
+  const [type, setType] = useState('');
 
   const handleSubmit = async () => {
     await addDoc(userCollectionRef, {
       name,
       email,
       details,
+      type,
     });
 
     setName('');
     setEmail('');
     setDetails('');
+    setType('');
     navigate('/ContactThanks');
   };
 
@@ -37,7 +39,7 @@ const Contact = () => {
       </div>
       <div>
         <h2 className="text-xl font-semibold text-center md:text-start mt-8 mb-10">
-          Type of contact: {radio}
+          Type of contact: {type}
         </h2>
         <div className=" md:flex justify-between gap-8">
           <div className="flex flex-col text-xl gap-8 mb-8">
@@ -49,10 +51,10 @@ const Contact = () => {
                 <input
                   id="question"
                   type="radio"
-                  defaultChecked={radio === 'question'}
+                  defaultChecked={type === 'question'}
                   value="I have a question about the service."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -68,10 +70,10 @@ const Contact = () => {
                 <input
                   id="registered client"
                   type="radio"
-                  defaultChecked={radio === 'registered client '}
+                  defaultChecked={type === 'registered client '}
                   value="I'm a registered client and I need support."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -87,10 +89,10 @@ const Contact = () => {
                 <input
                   id="interested counselor"
                   type="radio"
-                  defaultChecked={radio === 'interested counselor'}
+                  defaultChecked={type === 'interested counselor'}
                   value="I'm a counselor interested in joining."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -106,10 +108,10 @@ const Contact = () => {
                 <input
                   id="registered counselor"
                   type="radio"
-                  defaultChecked={radio === 'registered counselor'}
+                  defaultChecked={type === 'registered counselor'}
                   value="I'm a registered counselor and I need support."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -125,10 +127,10 @@ const Contact = () => {
                 <input
                   id="business"
                   type="radio"
-                  defaultChecked={radio === 'business'}
+                  defaultChecked={type === 'business'}
                   value="I have a business-related inquiry."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -144,10 +146,10 @@ const Contact = () => {
                 <input
                   id="organization"
                   type="radio"
-                  defaultChecked={radio === 'organization'}
+                  defaultChecked={type === 'organization'}
                   value="I'm interested in Healing Online for my organization."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -163,10 +165,10 @@ const Contact = () => {
                 <input
                   id="billing"
                   type="radio"
-                  defaultChecked={radio === 'billing'}
+                  defaultChecked={type === 'billing'}
                   value="I have a billing related question."
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setType(e.target.value);
                   }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
