@@ -10,6 +10,7 @@ const Contact = () => {
   const [details, setDetails] = useState('');
   const userCollectionRef = collection(db, 'contactdata');
   const navigate = useNavigate();
+  const [radio, setRadio] = useState('');
 
   const handleSubmit = async () => {
     await addDoc(userCollectionRef, {
@@ -36,7 +37,7 @@ const Contact = () => {
       </div>
       <div>
         <h2 className="text-xl font-semibold text-center md:text-start mt-8 mb-10">
-          Type of contact
+          Type of contact: {radio}
         </h2>
         <div className=" md:flex justify-between gap-8">
           <div className="flex flex-col text-xl gap-8 mb-8">
@@ -46,9 +47,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="question"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'question'}
+                  value="I have a question about the service."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -61,9 +66,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-2-radio"
+                  id="registered client"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'registered client '}
+                  value="I'm a registered client and I need support."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -76,10 +85,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  checked
-                  id="inline-checked-radio"
+                  id="interested counselor"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'interested counselor'}
+                  value="I'm a counselor interested in joining."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -92,9 +104,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="registered counselor"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'registered counselor'}
+                  value="I'm a registered counselor and I need support."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -107,9 +123,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="business"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'business'}
+                  value="I have a business-related inquiry."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -122,9 +142,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="organization"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'organization'}
+                  value="I'm interested in Healing Online for my organization."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
@@ -137,9 +161,13 @@ const Contact = () => {
                 className="ml-2 text-black-400 dark:text-gray-500"
               >
                 <input
-                  id="inline-radio"
+                  id="billing"
                   type="radio"
-                  value=""
+                  defaultChecked={radio === 'billing'}
+                  value="I have a billing related question."
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
                   name="inline-radio-group"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
