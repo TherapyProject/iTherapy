@@ -1,49 +1,66 @@
-import { useState } from 'react';
-
 import {
-  Label,
-  TextInput,
+  Alert,
   Button,
   Checkbox,
+  Label,
+  TextInput,
 } from 'flowbite-react/lib/esm/components';
-
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { useAuth } from '../../contexts/AuthContext';
 
 function TherapistCreate() {
- 
   // const [UserName, setUsername] = useState('');
   const [email, setEmail] = useState('');
   // const [city, setCity] = useState('');
   // const [licenseNumber, setLicenseNumber] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [error, setError] = useState('');
+  const [signupSuccess, setSignupSuccess] = useState(false);
+  const { signUp } = useAuth();
+
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
-    
-    const [setError] = useState('');
-    const [signUp] = useAuth();
     e.preventDefault();
+
     if (password !== repeatPassword) {
       return setError('Passwords do not match');
     }
+
     try {
       setError('');
-     await signUp(email,password);
+      await signUp(email, password);
+      setSignupSuccess(true);
+
       const timer = setTimeout(() => {
         return navigate('/home');
       }, 3000);
       return () => clearTimeout(timer);
     } catch (firebaseError) {
-      console.log(firebaseError.message)
+      console.log(firebaseError.message);
       return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
     }
   }
 
   return (
     <div>
+      {signupSuccess && (
+        <Alert color="success">
+          <span>
+            <span className="font-medium">Alert!</span> You successfully signed
+            up
+          </span>
+        </Alert>
+      )}
+      {error && (
+        <Alert color="failure">
+          <span>
+            <span className="font-medium">Alert!</span> {error}{' '}
+          </span>
+        </Alert>
+      )}
       <form
         onSubmit={handleSubmit}
         className=" m-10 mb-24 sm:ml-32  flex flex-col w-72 gap-4  "
