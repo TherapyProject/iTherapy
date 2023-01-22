@@ -8,7 +8,7 @@ function CreditCard({ pic }) {
       </figure>
       <div className="card-body ">
         <div className="card-actions justify-end">
-          <button  type="submit" className="btn btn-info ">
+          <button type="submit" className="btn btn-info ">
             Select
           </button>
         </div>

@@ -1,4 +1,5 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
+
 import {
   Label,
   TextInput,
@@ -6,19 +7,40 @@ import {
   Checkbox,
 } from 'flowbite-react/lib/esm/components';
 
-function TherapistCreate() {
-  const [UserName, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [city, setCity] = useState('');
-  const [licenseNumber, setLicenseNumber] = useState(0);
-  const [password, setPassword] = useState(0);
-  const [repeatPassword, setRepeatPassword] = useState(0);
+import { useNavigate } from 'react-router-dom';
 
-  const handleSubmit = (e) => {
+import { useAuth } from '../../contexts/AuthContext';
+
+function TherapistCreate() {
+ 
+  // const [UserName, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  // const [city, setCity] = useState('');
+  // const [licenseNumber, setLicenseNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    
+    const [setError] = useState('');
+    const [signUp] = useAuth();
     e.preventDefault();
-    // eslint-disable-next-line no-console
-    console.log(UserName, email, city, licenseNumber, password, repeatPassword);
-  };
+    if (password !== repeatPassword) {
+      return setError('Passwords do not match');
+    }
+    try {
+      setError('');
+     await signUp(email,password);
+      const timer = setTimeout(() => {
+        return navigate('/home');
+      }, 3000);
+      return () => clearTimeout(timer);
+    } catch (firebaseError) {
+      return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
+    }
+  }
+
   return (
     <div>
       <form
@@ -28,7 +50,7 @@ function TherapistCreate() {
         <h1 className="font-[Poppins] text-2xl whitespace-nowrap">
           CREATE AN ACCOUNT
         </h1>
-        <div>
+        {/* <div>
           <div className="mb-2 text-neutral-500">
             <Label htmlFor="UserName" value="User Name" />
           </div>
@@ -39,7 +61,7 @@ function TherapistCreate() {
             shadow="true"
             onChange={(e) => setUsername(e.target.value)}
           />
-        </div>
+        </div> */}
         <div>
           <div className="mb-2 ">
             <Label htmlFor="email2" value="Email" />
@@ -52,7 +74,7 @@ function TherapistCreate() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        {/* <div>
           <div className="mb-2 ">
             <Label htmlFor="City" value="City" />
           </div>
@@ -63,8 +85,8 @@ function TherapistCreate() {
             shadow="true"
             onChange={(e) => setCity(e.target.value)}
           />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <div className="mb-2 ">
             <Label htmlFor="LicenseNumber" value="License Number" />
           </div>
@@ -75,7 +97,7 @@ function TherapistCreate() {
             shadow="true"
             onChange={(e) => setLicenseNumber(e.target.value)}
           />
-        </div>
+        </div> */}
         <div>
           <div className="mb-2 block">
             <Label htmlFor="password2" value="Create Password" />
