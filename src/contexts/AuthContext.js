@@ -1,8 +1,11 @@
 import {
+  createUserWithEmailAndPassword,
   FacebookAuthProvider,
-  getAuth,
   GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from 'firebase/auth';
 import React, {
   createContext,
@@ -15,40 +18,38 @@ import { auth } from '../backend/firebase';
 
 const AuthContext = createContext();
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
-
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  function signup(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+  function changeCurrentUser(newUser) {
+    setCurrentUser({ ...newUser });
   }
 
-  function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
+  function signUp(email, password) {
+    return createUserWithEmailAndPassword(auth, email, password);
   }
 
-  function logout() {
-    return auth.signOut();
+  function logIn(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+
+  function logOut() {
+    return signOut(auth);
   }
 
   const signInWithFacebook = async () => {
     const provider = new FacebookAuthProvider();
-    const authFB = getAuth();
-    await signInWithPopup(authFB, provider);
+    await signInWithPopup(auth, provider);
   };
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    const authG = getAuth();
-    await signInWithPopup(authG, provider);
+    await signInWithPopup(auth, provider);
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
     });
@@ -59,13 +60,22 @@ export function AuthProvider({ children }) {
   const value = useMemo(
     () => ({
       currentUser,
-      signup,
-      login,
+      signUp,
+      logIn,
+      logOut,
       signInWithFacebook,
       signInWithGoogle,
-      logout,
+      changeCurrentUser,
     }),
-    [currentUser, signup, login, signInWithFacebook, signInWithGoogle, logout]
+    [
+      currentUser,
+      signUp,
+      logIn,
+      logOut,
+      signInWithFacebook,
+      signInWithGoogle,
+      changeCurrentUser,
+    ]
   );
 
   return (
@@ -73,4 +83,8 @@ export function AuthProvider({ children }) {
       {!loading && children}
     </AuthContext.Provider>
   );
+}
+
+export function useAuth() {
+  return useContext(AuthContext);
 }

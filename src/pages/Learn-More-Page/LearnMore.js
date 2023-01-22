@@ -49,7 +49,7 @@ function LearnMore() {
           <span className="text-6xl text-black">.</span> Reliable Internet
           connection
         </li>
-        <li className="whitespace-nowrap"> 
+        <li className="whitespace-nowrap">
           <span className="text-6xl text-black">.</span> Currently residing in
           the US
         </li>

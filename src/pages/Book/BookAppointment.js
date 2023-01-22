@@ -1,4 +1,6 @@
+import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { db } from '../../backend/firebase';
 import Details from '../../components/BookAppointment/Details';
 import Issue from '../../components/BookAppointment/Issue';
 import PatientType from '../../components/BookAppointment/PatientType';
@@ -7,6 +9,7 @@ import Relationship from '../../components/BookAppointment/Relationship';
 import SeenTherapist from '../../components/BookAppointment/SeenTherapist';
 import Submit from '../../components/BookAppointment/Submit';
 import ThankYou from '../../components/BookAppointment/ThankYou';
+import { useAuth } from '../../contexts/AuthContext';
 
 const STEPS = [
   'Patient type',
@@ -27,6 +30,7 @@ export default function BookAppointment() {
   const [quality, setQuality] = useState('');
   const [issue, setIssue] = useState('');
   const [details, setDetails] = useState('');
+  const { currentUser } = useAuth();
 
   const handleNext = () => {
     if (activeStep < STEPS.length - 1) {
@@ -52,6 +56,18 @@ export default function BookAppointment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const data = {
+      patientType,
+      relationship,
+      seenTherapist,
+      quality,
+      issue,
+      details,
+    };
+
+    setDoc(doc(db, 'appointments', currentUser.uid), data);
+
     handleNext();
   };
 
