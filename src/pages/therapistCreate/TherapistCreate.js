@@ -39,7 +39,7 @@ function TherapistCreate() {
       }, 3000);
       return () => clearTimeout(timer);
     } catch (firebaseError) {
-      console.log(firebaseError.message);
+      
       return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
     }
   }
