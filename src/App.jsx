@@ -44,7 +44,6 @@ function App() {
               <Route path="/book" element={<BookAppointment />} />
             </Route>
             <Route path="/learnmore" element={<LearnMore />} />
-            <Route path="/contactthanks" element={<ContactThanks />} />
             <Route path="/profile" element={<PrivateRoute />}>
               <Route path="/profile" element={<Profile />} />
             </Route>
