@@ -1,18 +1,18 @@
-// import React, { Component } from 'react';
-import rectangle from './about-images/Rectangle.svg';
-
 function About() {
   return (
-    <div className="About  ">
-      <div className="flex flex-col px-4 py-14 sm:px-28 sm:text-center md:text-left mb-20">
-        <h1 className="font-[Poppins]   sm:pl-0 text-4xl sm:text-5xl	text-center sm:text-left">
-          HEALING!
+    <div className="About ">
+      <div className="flex flex-col mb-10 px-4 py-14 sm:px-28 sm:text-center md:text-left">
+        <h1 className="font-[Poppins] text-4xl text-center sm:text-left sm:text-5xl sm:pl-0">
+          Healing!
         </h1>
-        <h3 className="font-[Poppins]   text-slate-400 pb-10 text-2xl whitespace-nowrap text-center sm:text-left">
-          some cool one liner !
+        <h3 className="font-[Poppins] text-slate-400 mt-4 pb-10 text-2xl whitespace-nowrap text-center sm:text-left">
+          Helping you heal
         </h3>
 
-        <p className="  font-[Poppins] text-justify md:text-lg leading-7	font-normal min-w-[250px] pr-12 px-3 m-7 sm:px-0 sm:m-0	sm:w-[1000px]   text-xs sm:text-left ">
+        <p
+          className="font-[Poppins] text-justify md:text-lg leading-7	font-normal text-gray-600 dark:text-gray-400 mb-10
+          sm:text-left sm:text-base sm:leading-8 sm:pr-0"
+        >
           At Healing &#39;we believe there is a better way to do things. A more
           valuable way where customers are earned rather than bought. We&#39;re
           obsessively passionate about it&#39; and our mission is to help people
@@ -25,25 +25,24 @@ function About() {
       </div>
       <div className="bg-[url('pages/About/about-images/backGround.png')] ">
         <div className="flex justify-center">
-          <div className="flex flex-col gap-5 md:flex-row md:max-w-xl md:justify-between  py-10">
+          <div className="flex flex-col gap-5 md:flex-row md:max-w-xl md:justify-between py-10">
             <img
-              className="     md:w-72 px-10  sm:px-0"
-              src={rectangle}
+              className="md:w-72 px-10 sm:px-0"
+              src="https://github.com/rageofkurd.png"
               alt="Therapist"
             />
             <div className="p-6 flex flex-col justify-start gap-8">
               <div className="w-40 ">
-                <h1 className="text-gray-900  font-normal mb-2 text-3xl sm:pl-0 pl-2 whitespace-nowrap font-['Poppins']">
+                <h1 className="text-gray-900 font-normal mb-2 text-3xl sm:pl-0 pl-2 whitespace-nowrap font-['Poppins']">
                   Our Founding
                 </h1>
-                <p className="text-gray-700 w-96 font-normal text-xs sm:text-base  px-3 sm:px-0 font-['Poppins'] ">
-                  Healing was founded by Payam Abubakr in 2021. It was called
-                  Healing Online, and started as a blog and an online community
-                  where some of the world&apos;s therapists shared their
-                  research and ideas. We launched the Beginner&apos;s Guide to
-                  Therapy and our first study, and that hub of industry
-                  expertise transformed into a small consulting firm and led us
-                  to create the Online Therapist of today!
+                <p className="text-gray-700 w-96 font-normal sm:text-base px-3 sm:px-0 font-['Poppins']">
+                  Healing was founded in 2019 by a group of SEO experts who
+                  wanted to make SEO more accessible to everyone. We believe
+                  that SEO is a powerful tool for businesses of all sizes and
+                  that it should be easy to understand and use. We&#39;re
+                  passionate about helping businesses grow and we&#39;re excited
+                  to help you achieve your goals.
                 </p>
               </div>
             </div>
