@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CreditCard from '../../components/CreditCard/CreditCard';
 import Card1 from './cardPics/Card1.png';
 import Card2 from './cardPics/Card2.png';
@@ -26,11 +27,11 @@ function BuyTicket() {
           <p className="text-center font-[Poppins] text-sm sm:text-2xl py-10 px-10">
             Click confirm to use the selected card to purchase 5 tickets for 10$
           </p>
-          <a href='./buyticketthanks'>
+          <Link to='./buyticketthanks'>
              <button type="submit" className="btn btn-info  ">
             CONFIRM PURCHASE
           </button>
-          </a>
+          </Link>
          
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function BuyTicketThanks() {
   return (
@@ -7,14 +8,14 @@ function BuyTicketThanks() {
       <p className="text-2xl mt-5">
        Your purchase has been submitted, you should receive the receipt soon.
       </p>
-      <a href="./home">
+      <Link to='/home'>
         <button
           type="button"
           className="btn btn-info text-xl mt-5 mb-15"
         >
           BACK TO HOME
         </button>
-      </a>
+      </Link>
     </div>
   );
 }
