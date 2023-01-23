@@ -41,7 +41,6 @@ function App() {
             <Route path="/ContactThanks" element={<ContactThanks />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
               <Route path="/buyticket" element={<PrivateRoute />}/>
-              <Route path="/buyticket" element={<BuyTicket />} />
             </Route>
             <Route path="/book" element={<PrivateRoute />}>
               <Route path="/book" element={<BookAppointment />} />
