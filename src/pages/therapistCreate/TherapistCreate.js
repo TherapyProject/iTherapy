@@ -10,10 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 function TherapistCreate() {
-  // const [UserName, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  // const [city, setCity] = useState('');
-  // const [licenseNumber, setLicenseNumber] = useState('');
+
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [error, setError] = useState('');
@@ -39,7 +37,6 @@ function TherapistCreate() {
       }, 3000);
       return () => clearTimeout(timer);
     } catch (firebaseError) {
-      
       return setError(firebaseError.message.split(':')[1].split('(')[0].trim());
     }
   }
@@ -68,18 +65,7 @@ function TherapistCreate() {
         <h1 className="font-[Poppins] text-2xl whitespace-nowrap">
           CREATE AN ACCOUNT
         </h1>
-        {/* <div>
-          <div className="mb-2 text-neutral-500">
-            <Label htmlFor="UserName" value="User Name" />
-          </div>
-          <TextInput
-            id="UserName"
-            type="text"
-            required="true"
-            shadow="true"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div> */}
+
         <div>
           <div className="mb-2 ">
             <Label htmlFor="email2" value="Email" />
@@ -92,30 +78,6 @@ function TherapistCreate() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        {/* <div>
-          <div className="mb-2 ">
-            <Label htmlFor="City" value="City" />
-          </div>
-          <TextInput
-            id="City"
-            type="text"
-            required="true"
-            shadow="true"
-            onChange={(e) => setCity(e.target.value)}
-          />
-        </div> */}
-        {/* <div>
-          <div className="mb-2 ">
-            <Label htmlFor="LicenseNumber" value="License Number" />
-          </div>
-          <TextInput
-            id="LicenseNumber"
-            type="text"
-            required="true"
-            shadow="true"
-            onChange={(e) => setLicenseNumber(e.target.value)}
-          />
-        </div> */}
         <div>
           <div className="mb-2 block">
             <Label htmlFor="password2" value="Create Password" />
