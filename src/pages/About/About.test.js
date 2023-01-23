@@ -19,7 +19,9 @@ describe('About', () => {
     const { container } = render(<About />);
     const img = container.querySelector('img');
     expect(img).toBeInTheDocument();
-    expect(img.src).toContain('https://github.com/rageofkurd.png');
+    expect(img.src).toContain(
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzgOVWLFRM2VMy-pVscCdMG-c4JvMQR0G5mg&usqp=CAU'
+    );
     expect(img.getAttribute('alt')).toEqual('Therapist');
   });
 });

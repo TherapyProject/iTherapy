@@ -28,7 +28,7 @@ function About() {
           <div className="flex flex-col gap-5 md:flex-row md:max-w-xl md:justify-between py-10">
             <img
               className="md:w-72 px-10 sm:px-0"
-              src="https://github.com/rageofkurd.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzgOVWLFRM2VMy-pVscCdMG-c4JvMQR0G5mg&usqp=CAU"
               alt="Therapist"
             />
             <div className="p-6 flex flex-col justify-start gap-8">
