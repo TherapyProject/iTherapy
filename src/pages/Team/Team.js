@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamMember from '../../components/TeamMember/TeamMember';
 
-const TEAM_MEMBERS = [
+export const TEAM_MEMBERS = [
   {
     name: 'Nanor Gosdanian',
     title: 'Frontend Developer',

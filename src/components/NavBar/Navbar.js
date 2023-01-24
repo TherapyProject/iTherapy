@@ -1,6 +1,7 @@
 import { Dropdown } from 'flowbite-react/lib/esm/components';
 import React from 'react';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Logo from '../../images/logo.png';
 import DropDownMenu from '../DropDownMenu/DropDownMenu';
@@ -90,25 +91,25 @@ function Navbar() {
                 ''
               )}
 
-              <Dropdown.Item onClick={() => navigate('/home')}>
-                Home
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => navigate('/blogs')}>
-                Blogs
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => navigate('/about')}>
-                About
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => navigate('/contact')}>
-                Contact Us
-              </Dropdown.Item>
+              <Link to="/home">
+                <Dropdown.Item>Home</Dropdown.Item>
+              </Link>
+              <Link to="/blogs">
+                <Dropdown.Item>Blogs</Dropdown.Item>
+              </Link>
+              <Link to="/about">
+                <Dropdown.Item>About</Dropdown.Item>
+              </Link>
+              <Link to="/contact">
+                <Dropdown.Item>Contact Us</Dropdown.Item>
+              </Link>
               <Dropdown.Divider />
               {currentUser ? (
                 <Dropdown.Item onClick={() => logOut()}>Sign out</Dropdown.Item>
               ) : (
-                <Dropdown.Item onClick={() => navigate('/login')}>
-                  Log in
-                </Dropdown.Item>
+                <Link to="/login">
+                  <Dropdown.Item>Log in</Dropdown.Item>
+                </Link>
               )}
             </Dropdown>
           </div>
