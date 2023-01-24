@@ -10,6 +10,7 @@ import BlogsPage from './pages/Blogs/BlogsPage';
 import SingleBlogPage from './pages/Blogs/SingleBlogPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
+import BuyTicketThanks from './pages/buyTicket/BuyTicketThanks';
 import Contact from './pages/Contact/Contact';
 import ContactThanks from './pages/Contact/ContactThanks';
 import Home from './pages/Home/Home';
@@ -18,7 +19,6 @@ import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
-import BuyTicketThanks from './pages/buyTicket/BuyTicketThanks';
 import TherapistCreate from './pages/therapistCreate/TherapistCreate';
 
 function App() {
@@ -30,7 +30,6 @@ function App() {
           <Scroll />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:blogId" element={<SingleBlogPage />} />
             <Route path="/about" element={<About />} />
@@ -42,7 +41,7 @@ function App() {
             <Route path="/ContactThanks" element={<ContactThanks />} />
             <Route path="/buyticketthanks" element={<BuyTicketThanks />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
-              <Route path="/buyticket" element={<BuyTicket />}/>
+              <Route path="/buyticket" element={<BuyTicket />} />
             </Route>
             <Route path="/book" element={<PrivateRoute />}>
               <Route path="/book" element={<BookAppointment />} />
