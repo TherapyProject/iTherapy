@@ -33,6 +33,7 @@ function Footer() {
           <a href="/blogs">Blogs</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
+          <a href="/team">Team</a>
         </div>
         <div className="flex flex-row gap-10 lg:gap-16">
           <a href="https://twitter.com">
