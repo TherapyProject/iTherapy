@@ -18,6 +18,7 @@ import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
+import TherapistCreate from './pages/therapistCreate/TherapistCreate';
 
 function App() {
   return (
@@ -36,9 +37,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/therapistCreate" element={<TherapistCreate />} />
             <Route path="/ContactThanks" element={<ContactThanks />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
-              <Route path="/buyticket" element={<BuyTicket />} />
+              <Route path="/buyticket" element={<BuyTicket />}/>
             </Route>
             <Route path="/book" element={<PrivateRoute />}>
               <Route path="/book" element={<BookAppointment />} />
