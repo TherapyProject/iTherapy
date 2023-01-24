@@ -18,6 +18,7 @@ import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
+import BuyTicketThanks from './pages/buyTicket/BuyTicketThanks';
 import TherapistCreate from './pages/therapistCreate/TherapistCreate';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/therapistCreate" element={<TherapistCreate />} />
             <Route path="/ContactThanks" element={<ContactThanks />} />
+            <Route path="/buyticketthanks" element={<BuyTicketThanks />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
               <Route path="/buyticket" element={<BuyTicket />}/>
             </Route>
