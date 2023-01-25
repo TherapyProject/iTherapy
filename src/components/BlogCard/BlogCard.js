@@ -16,7 +16,7 @@ const BlogCard = ({
         />
         <div className="absolute top-0 left-0 w-full h-full bg-stone-800 bg-opacity-10" />
         <div className="absolute top-2 right-2 text-[0.55rem] bg-stone-800/70 p-1 rounded-sm text-white">
-          {minsRead} mins read
+          {minsRead}
         </div>
       </div>
 

@@ -95,11 +95,12 @@ const Profile = () => {
     await deleteObject(ref(storage, `avatars/${user.uid}/profile-picture`));
   };
 
-  const createProfile = async () => {
+  const createProfile = async (profilePic) => {
     try {
       await setDoc(doc(db, 'users', currentUser.uid), {
         uid: currentUser.uid,
         displayName: profile.displayName,
+        photoURL: profilePic,
         email: currentUser.email,
         gender: profile.gender,
         education: profile.education,
@@ -132,7 +133,7 @@ const Profile = () => {
     currentUser.displayName = profile.displayName;
     changeCurrentUser(currentUser);
 
-    createProfile();
+    createProfile(profile.photoURL);
   };
 
   const handleCancel = () => {

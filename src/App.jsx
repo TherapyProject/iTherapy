@@ -1,11 +1,12 @@
-import React from 'react';
+import { collection, onSnapshot } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { db } from './backend/firebase';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/NavBar/Navbar';
 import PrivateRoute from './components/PrivateRoute/privateRoute';
 import Scroll from './components/Scroll/Scroll';
 import { AuthProvider } from './contexts/AuthContext';
-import { BlogsProvider } from './contexts/BlogsContext';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import NewBlogPage from './pages/Blogs/NewBlogPage';
@@ -21,19 +22,44 @@ import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
 
 function App() {
+  const [blogs, setBlogs] = useState([]);
+
+ 
+  const getBlogs = async () => {
+    console.log('getting blogs');
+    const collectionRef = collection(db, 'blogs');
+    onSnapshot(collectionRef, (snapshot) => {
+      
+      snapshot.docChanges().forEach((docChange) => {
+
+  
+            
+            const blog = {
+              id: docChange.doc.id,
+              ...docChange.doc.data(),
+            };
+            setBlogs((prevBlogs) => [...prevBlogs, blog]);
+            
+        })
+      })
+    };
+
+  useEffect(() => {
+    getBlogs();
+  }, blogs);
+
+  
+
   return (
     <AuthProvider>
-      <BlogsProvider>
       <BrowserRouter>
         <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
           <Navbar />
           <Scroll />
           <Routes>
-            
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/blogs" element={<BlogsPage />} />
-            <Route path="/blogs/:blogId" element={<SingleBlogPage />} />
+            <Route path="/" element={<Home blogData={blogs} />} />
+            <Route path="/blogs" element={<BlogsPage blogsData={blogs} />} />
+            <Route path="/blogs/:blogId" element={<SingleBlogPage blogData={blogs} />} />
             <Route path="/newBlog" element={<NewBlogPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -54,7 +80,6 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
-      </BlogsProvider>
     </AuthProvider>
   );
 }
