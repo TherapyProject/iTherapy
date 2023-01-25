@@ -5,8 +5,10 @@ import Navbar from './components/NavBar/Navbar';
 import PrivateRoute from './components/PrivateRoute/privateRoute';
 import Scroll from './components/Scroll/Scroll';
 import { AuthProvider } from './contexts/AuthContext';
+import { BlogsProvider } from './contexts/BlogsContext';
 import About from './pages/About/About';
 import BlogsPage from './pages/Blogs/BlogsPage';
+import NewBlogPage from './pages/Blogs/NewBlogPage';
 import SingleBlogPage from './pages/Blogs/SingleBlogPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
@@ -21,15 +23,18 @@ import Team from './pages/Team/Team';
 function App() {
   return (
     <AuthProvider>
+      <BlogsProvider>
       <BrowserRouter>
         <div className="App flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
           <Navbar />
           <Scroll />
           <Routes>
+            
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:blogId" element={<SingleBlogPage />} />
+            <Route path="/newBlog" element={<NewBlogPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
@@ -49,6 +54,7 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
+      </BlogsProvider>
     </AuthProvider>
   );
 }
