@@ -5,7 +5,7 @@ import HeroSection from '../../components/HeroSection/HeroSection';
 import Purchase from '../../components/Purchase/Purchase';
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs';
 
-function Home({blogData}) {
+function Home({ blogData }) {
   return (
     <div className="Home">
       <HeroSection />

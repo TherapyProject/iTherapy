@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Slider from '../../components/SliderSection/Slider';
 import SliderLayout from '../../components/SliderSection/SliderLayout';
 
-const SingleBlogPage = ({blogData}) => {
+const SingleBlogPage = ({ blogData }) => {
   const { blogId } = useParams();
 
   const location = useLocation();
@@ -86,7 +86,7 @@ const SingleBlogPage = ({blogData}) => {
       </div>
 
       <SliderLayout title="Related Blogs">
-        <Slider blogData={blogData}  />
+        <Slider blogData={blogData} />
       </SliderLayout>
     </div>
   );

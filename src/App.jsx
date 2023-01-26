@@ -27,31 +27,23 @@ import TherapistCreate from './pages/therapistCreate/TherapistCreate';
 function App() {
   const [blogs, setBlogs] = useState([]);
 
- 
   const getBlogs = async () => {
     console.log('getting blogs');
     const collectionRef = collection(db, 'blogs');
     onSnapshot(collectionRef, (snapshot) => {
-      
       snapshot.docChanges().forEach((docChange) => {
-
-  
-            
-            const blog = {
-              id: docChange.doc.id,
-              ...docChange.doc.data(),
-            };
-            setBlogs((prevBlogs) => [...prevBlogs, blog]);
-            
-        })
-      })
-    };
+        const blog = {
+          id: docChange.doc.id,
+          ...docChange.doc.data(),
+        };
+        setBlogs((prevBlogs) => [...prevBlogs, blog]);
+      });
+    });
+  };
 
   useEffect(() => {
     getBlogs();
   }, blogs);
-
-  
 
   return (
     <AuthProvider>
@@ -62,9 +54,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home blogData={blogs} />} />
             <Route path="/blogs" element={<BlogsPage blogsData={blogs} />} />
-            <Route path="/blogs/:blogId" element={<SingleBlogPage blogData={blogs} />} />
-           <Route path="/newblog" element={<PrivateRoute />}>
-            <Route path="/newblog" element={<NewBlogPage />} />
+            <Route
+              path="/blogs/:blogId"
+              element={<SingleBlogPage blogData={blogs} />}
+            />
+            <Route path="/newblog" element={<PrivateRoute />}>
+              <Route path="/newblog" element={<NewBlogPage />} />
             </Route>
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
