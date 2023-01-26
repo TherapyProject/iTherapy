@@ -28,7 +28,7 @@ function App() {
   const [blogs, setBlogs] = useState([]);
 
   const getBlogs = async () => {
-    console.log('getting blogs');
+    
     const collectionRef = collection(db, 'blogs');
     onSnapshot(collectionRef, (snapshot) => {
       snapshot.docChanges().forEach((docChange) => {

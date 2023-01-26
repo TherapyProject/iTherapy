@@ -69,7 +69,7 @@ const NewBlogPage = () => {
         authName: currentUser.displayName,
         authImage: currentUser.photoURL,
       });
-      console.log(currentUser.displayName);
+      
       setSuccessMessage('Blog created successfully');
     } catch (error) {
       setErrorMessage('Failed to create blog');
