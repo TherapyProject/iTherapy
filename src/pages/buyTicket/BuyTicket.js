@@ -27,7 +27,7 @@ function BuyTicket() {
           <p className="text-center font-[Poppins] text-sm sm:text-2xl py-10 px-10">
             Click confirm to use the selected card to purchase 5 tickets for 10$
           </p>
-          <Link to="./buyticketthanks">
+          <Link to="/buyticketthanks">
             <button type="submit" className="btn btn-info  ">
               CONFIRM PURCHASE
             </button>

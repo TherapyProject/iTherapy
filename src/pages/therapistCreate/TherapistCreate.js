@@ -34,7 +34,7 @@ function TherapistCreate() {
       setSignupSuccess(true);
 
       const timer = setTimeout(() => {
-        return navigate('/home');
+        return navigate('/');
       }, 3000);
       return () => clearTimeout(timer);
     } catch (firebaseError) {
