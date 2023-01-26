@@ -25,7 +25,7 @@ function Navbar() {
             </span>
           </a>
           <div
-            className="hidden w-full md:block md:w-auto w-1/2 pr-7"
+            className="hidden w-full md:block md:w-auto pr-7"
             id="navbar-default"
           >
             <ul className="flex flex-col p-2.5 gap-12 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-cyan-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">

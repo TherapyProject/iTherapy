@@ -29,7 +29,7 @@ function Footer() {
       </div>
       <div className="flex flex-col justify-around mt-2 sm:mt-8 md:m-0 gap-10 items-center">
         <div className="mx-3 font-bold flex justify-end gap-5 lg:gap-10 md:text-lg lg:text-xl  ">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
           <a href="/blogs">Blogs</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>

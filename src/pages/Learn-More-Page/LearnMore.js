@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import pic from './img/pic.png';
 
-
 function LearnMore() {
   return (
     <div className="font-[Poppins] py-20 text-center sm:text-left sm:pl-52 ">
@@ -56,12 +55,11 @@ function LearnMore() {
           the US
         </li>
       </ul>
-      <Link to='/therapistcreate'>
+      <Link to="/therapistcreate">
         <button type="submit" className="btn btn-info mt-10  ">
-        GET STARTED
-      </button>
+          GET STARTED
+        </button>
       </Link>
-      
     </div>
   );
 }

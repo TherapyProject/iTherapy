@@ -8788,6 +8788,11 @@
   dependencies:
     "picomatch" "^2.2.1"
 
+"reading-time-estimator@^1.7.2":
+  "integrity" "sha512-UNvW9E1eGXErpZf3qtNzOx05Tu6TC8ZeN3Nir5JROQs4m7FwyjdWP/Dcfpkd9/V7p8xvjZ3FiWSHB8dhsuZSUw=="
+  "resolved" "https://registry.npmjs.org/reading-time-estimator/-/reading-time-estimator-1.7.2.tgz"
+  "version" "1.7.2"
+
 "recursive-readdir@^2.2.2":
   "integrity" "sha512-8HrF5ZsXk5FAH9dgsx3BlUer73nIhuj+9OrQwEbLTPOBzGkL1lsFCR01am+v+0m2Cmbs1nP12hLDl5FA7EszKA=="
   "resolved" "https://registry.npmjs.org/recursive-readdir/-/recursive-readdir-2.2.3.tgz"

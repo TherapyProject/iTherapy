@@ -18,6 +18,7 @@
     "react-router": "^6.6.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "reading-time-estimator": "^1.7.2",
     "web-vitals": "^3.1.0"
   },
   "scripts": {

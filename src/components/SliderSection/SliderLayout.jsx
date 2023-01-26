@@ -9,8 +9,10 @@ const SliderLayout = ({ children, title }) => {
           {title}
         </div>
         {title === 'Recent Blogs' && (
-          <Link to="/blogs" className="text-sm  md:text-base xl:text-lg 2xl:text-xl border border-orange-500 px-3 md:px-5 md:py-2 py-1 rounded-full text-orange-500 hover:text-white hover:bg-orange-500 hover:border-orange-500 transition hover:cursor-pointer">
-        
+          <Link
+            to="/blogs"
+            className="text-sm  md:text-base xl:text-lg 2xl:text-xl border border-orange-500 px-3 md:px-5 md:py-2 py-1 rounded-full text-orange-500 hover:text-white hover:bg-orange-500 hover:border-orange-500 transition hover:cursor-pointer"
+          >
             see all
           </Link>
         )}

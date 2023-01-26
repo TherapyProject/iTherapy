@@ -5,13 +5,13 @@ import HeroSection from '../../components/HeroSection/HeroSection';
 import Purchase from '../../components/Purchase/Purchase';
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs';
 
-function Home() {
+function Home({ blogData }) {
   return (
     <div className="Home">
       <HeroSection />
       <Appointment />
       <Communication />
-      <RecentBlogs />
+      <RecentBlogs blogData={blogData} />
       <Purchase />
     </div>
   );
