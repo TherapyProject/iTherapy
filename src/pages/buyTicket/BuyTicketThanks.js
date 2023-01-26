@@ -8,7 +8,7 @@ function BuyTicketThanks() {
       <p className="text-2xl mt-5">
         Your purchase has been submitted, you should receive the receipt soon.
       </p>
-      <Link to="/home">
+      <Link to="/">
         <button type="button" className="btn btn-info text-xl mt-5 mb-15">
           BACK TO HOME
         </button>
