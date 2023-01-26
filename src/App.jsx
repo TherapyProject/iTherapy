@@ -60,7 +60,9 @@ function App() {
             <Route path="/" element={<Home blogData={blogs} />} />
             <Route path="/blogs" element={<BlogsPage blogsData={blogs} />} />
             <Route path="/blogs/:blogId" element={<SingleBlogPage blogData={blogs} />} />
-            <Route path="/newBlog" element={<NewBlogPage />} />
+           <Route path="/newblog" element={<PrivateRoute />}>
+            <Route path="/newblog" element={<NewBlogPage />} />
+            </Route>
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
