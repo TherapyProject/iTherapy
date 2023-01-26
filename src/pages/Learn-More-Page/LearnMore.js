@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import pic from './img/pic.png';
+
 
 function LearnMore() {
   return (
@@ -54,9 +56,12 @@ function LearnMore() {
           the US
         </li>
       </ul>
-      <button type="submit" className="btn btn-info mt-10  ">
+      <Link to='/therapistcreate'>
+        <button type="submit" className="btn btn-info mt-10  ">
         GET STARTED
       </button>
+      </Link>
+      
     </div>
   );
 }

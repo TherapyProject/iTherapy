@@ -13,13 +13,16 @@ import NewBlogPage from './pages/Blogs/NewBlogPage';
 import SingleBlogPage from './pages/Blogs/SingleBlogPage';
 import BookAppointment from './pages/Book/BookAppointment';
 import BuyTicket from './pages/buyTicket/BuyTicket';
+import BuyTicketThanks from './pages/buyTicket/BuyTicketThanks';
 import Contact from './pages/Contact/Contact';
+import ContactThanks from './pages/Contact/ContactThanks';
 import Home from './pages/Home/Home';
 import LearnMore from './pages/Learn-More-Page/LearnMore';
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignupPage from './pages/Signup/SignupPage';
 import Team from './pages/Team/Team';
+import TherapistCreate from './pages/therapistCreate/TherapistCreate';
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -68,6 +71,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/therapistCreate" element={<TherapistCreate />} />
+            <Route path="/ContactThanks" element={<ContactThanks />} />
+            <Route path="/buyticketthanks" element={<BuyTicketThanks />} />
             <Route path="/buyticket" element={<PrivateRoute />}>
               <Route path="/buyticket" element={<BuyTicket />} />
             </Route>
